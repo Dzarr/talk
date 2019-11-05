@@ -1,8 +1,10 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 
-import { Button, ButtonIcon, ClickOutside } from "coral-ui/components";
 import {
+  Button,
+  ButtonIcon,
+  ClickOutside,
   Dropdown,
   DropdownButton,
   DropdownDivider,
@@ -58,7 +60,8 @@ const UserMenu: FunctionComponent<Props> = props => (
           className={styles.button}
           onClick={toggleVisibility}
           ref={ref}
-          variant="regular"
+          variant="plain"
+          uppercase={false}
           size="small"
         >
           <ButtonIcon className={styles.icon} size="lg">
