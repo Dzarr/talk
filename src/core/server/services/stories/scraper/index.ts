@@ -156,7 +156,7 @@ export async function scrape(
   // Get the metadata from the scraped html.
   const metadata = await scraper.scrape(
     storyURL,
-    tenant.stories.scraping.proxyURL
+    tenant.settings.stories.scraping.proxyURL
   );
   if (!metadata) {
     throw new Error("story at specified url not found");

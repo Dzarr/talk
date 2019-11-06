@@ -177,7 +177,7 @@ export class SSOVerifier implements Verifier<SSOToken> {
   }
 
   public supports(token: SSOToken | object, tenant: Tenant): token is SSOToken {
-    return tenant.auth.integrations.sso.enabled && isSSOToken(token);
+    return tenant.settings.auth.integrations.sso.enabled && isSSOToken(token);
   }
 
   public async verify(
@@ -186,7 +186,7 @@ export class SSOVerifier implements Verifier<SSOToken> {
     tenant: Tenant,
     now: Date
   ) {
-    const integration = tenant.auth.integrations.sso;
+    const integration = tenant.settings.auth.integrations.sso;
     if (!integration.enabled) {
       throw new IntegrationDisabled("sso");
     }

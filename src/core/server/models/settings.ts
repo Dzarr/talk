@@ -1,7 +1,9 @@
 import { Omit } from "coral-common/types";
+
 import {
   GQLAuth,
   GQLEmailConfiguration,
+  GQLEntitySettings,
   GQLFacebookAuthIntegration,
   GQLGoogleAuthIntegration,
   GQLLiveConfiguration,
@@ -87,7 +89,7 @@ export type DisableCommenting = Omit<
 
 export type Settings = GlobalModerationSettings &
   Pick<
-    GQLSettings,
+    GQLEntitySettings,
     | "charCount"
     | "email"
     | "recentCommentHistory"
@@ -99,7 +101,6 @@ export type Settings = GlobalModerationSettings &
     | "customCSSURL"
     | "communityGuidelines"
     | "stories"
-    | "createdAt"
   > & {
     /**
      * auth is the set of configured authentication integrations.

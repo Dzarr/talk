@@ -5,13 +5,15 @@ import { DEFAULT_SESSION_LENGTH } from "coral-common/constants";
 import { LanguageCode } from "coral-common/helpers/i18n/locales";
 import { DeepPartial, Omit, Sub } from "coral-common/types";
 import { dotize } from "coral-common/utils/dotize";
-import {
-  GQLMODERATION_MODE,
-  GQLSettings,
-} from "coral-server/graph/tenant/schema/__generated__/types";
 import { Settings } from "coral-server/models/settings";
 import { I18n } from "coral-server/services/i18n";
 import { tenants as collection } from "coral-server/services/mongodb/collections";
+
+import {
+  GQLMODERATION_MODE,
+  GQLOrganization,
+  GQLSettings,
+} from "coral-server/graph/tenant/schema/__generated__/types";
 
 import {
   generateSSOKey,
@@ -41,10 +43,10 @@ export interface TenantSettings
   locale: LanguageCode;
 }
 
-/**
- * Tenant describes a given Tenant on Coral that has Stories, Comments, and Users.
- */
-export type Tenant = Settings & TenantSettings;
+export interface Tenant extends GQLOrganization {
+  locale: LanguageCode;
+  settings: Settings;
+}
 
 /**
  * CreateTenantInput is the set of properties that can be set when a given
@@ -53,7 +55,7 @@ export type Tenant = Settings & TenantSettings;
  */
 export type CreateTenantInput = Pick<
   Tenant,
-  "domain" | "allowedDomains" | "locale" | "organization"
+  "name" | "contactEmail" | "url" | "allowedDomains" | "locale" | "domain"
 >;
 
 /**
@@ -74,121 +76,123 @@ export async function createTenant(
   const defaults: Sub<Tenant, CreateTenantInput> = {
     // Create a new ID.
     id: uuid.v4(),
+    createdAt: now,
 
-    // Default to post moderation.
-    moderation: GQLMODERATION_MODE.POST,
+    settings: {
+      // Default to post moderation.
+      moderation: GQLMODERATION_MODE.POST,
 
-    // Default to enabled.
-    live: {
-      enabled: true,
-    },
-
-    communityGuidelines: {
-      enabled: false,
-      content: "",
-    },
-    premodLinksEnable: false,
-    closeCommenting: {
-      auto: false,
-      // 2 weeks timeout.
-      timeout: 60 * 60 * 24 * 7 * 2,
-    },
-    disableCommenting: {
-      enabled: false,
-    },
-
-    // 30 seconds edit window length.
-    editCommentWindowLength: 30,
-
-    charCount: {
-      enabled: false,
-    },
-    wordList: {
-      suspect: [],
-      banned: [],
-    },
-    auth: {
-      sessionDuration: DEFAULT_SESSION_LENGTH,
-      integrations: {
-        local: {
-          enabled: true,
-          allowRegistration: true,
-          targetFilter: {
-            admin: true,
-            stream: true,
-          },
-        },
-        sso: {
-          enabled: false,
-          allowRegistration: false,
-          targetFilter: {
-            admin: true,
-            stream: true,
-          },
-          key: generateSSOKey(),
-          keyGeneratedAt: now,
-        },
-        oidc: {
-          enabled: false,
-          allowRegistration: false,
-          targetFilter: {
-            admin: true,
-            stream: true,
-          },
-        },
-        google: {
-          enabled: false,
-          allowRegistration: false,
-          targetFilter: {
-            admin: true,
-            stream: true,
-          },
-        },
-        facebook: {
-          enabled: false,
-          allowRegistration: false,
-          targetFilter: {
-            admin: true,
-            stream: true,
-          },
-        },
-      },
-    },
-    email: {
-      enabled: false,
-      smtp: {},
-    },
-    recentCommentHistory: {
-      enabled: false,
-      // 7 days in seconds.
-      timeFrame: 604800,
-      // Rejection rate defaulting to 30%, once exceeded, comments will be
-      // pre-moderated.
-      triggerRejectionRate: 0.3,
-    },
-    integrations: {
-      akismet: {
-        enabled: false,
-      },
-      perspective: {
-        enabled: false,
-        doNotStore: true,
-      },
-    },
-    reaction: getDefaultReactionConfiguration(bundle),
-    staff: getDefaultStaffConfiguration(bundle),
-    stories: {
-      scraping: {
+      // Default to enabled.
+      live: {
         enabled: true,
       },
-      disableLazy: false,
+
+      communityGuidelines: {
+        enabled: false,
+        content: "",
+      },
+      premodLinksEnable: false,
+      closeCommenting: {
+        auto: false,
+        // 2 weeks timeout.
+        timeout: 60 * 60 * 24 * 7 * 2,
+      },
+      disableCommenting: {
+        enabled: false,
+      },
+
+      // 30 seconds edit window length.
+      editCommentWindowLength: 30,
+
+      charCount: {
+        enabled: false,
+      },
+      wordList: {
+        suspect: [],
+        banned: [],
+      },
+      auth: {
+        sessionDuration: DEFAULT_SESSION_LENGTH,
+        integrations: {
+          local: {
+            enabled: true,
+            allowRegistration: true,
+            targetFilter: {
+              admin: true,
+              stream: true,
+            },
+          },
+          sso: {
+            enabled: false,
+            allowRegistration: false,
+            targetFilter: {
+              admin: true,
+              stream: true,
+            },
+            key: generateSSOKey(),
+            keyGeneratedAt: now,
+          },
+          oidc: {
+            enabled: false,
+            allowRegistration: false,
+            targetFilter: {
+              admin: true,
+              stream: true,
+            },
+          },
+          google: {
+            enabled: false,
+            allowRegistration: false,
+            targetFilter: {
+              admin: true,
+              stream: true,
+            },
+          },
+          facebook: {
+            enabled: false,
+            allowRegistration: false,
+            targetFilter: {
+              admin: true,
+              stream: true,
+            },
+          },
+        },
+      },
+      email: {
+        enabled: false,
+        smtp: {},
+      },
+      recentCommentHistory: {
+        enabled: false,
+        // 7 days in seconds.
+        timeFrame: 604800,
+        // Rejection rate defaulting to 30%, once exceeded, comments will be
+        // pre-moderated.
+        triggerRejectionRate: 0.3,
+      },
+      integrations: {
+        akismet: {
+          enabled: false,
+        },
+        perspective: {
+          enabled: false,
+          doNotStore: true,
+        },
+      },
+      reaction: getDefaultReactionConfiguration(bundle),
+      staff: getDefaultStaffConfiguration(bundle),
+      stories: {
+        scraping: {
+          enabled: true,
+        },
+        disableLazy: false,
+      },
+      accountFeatures: {
+        changeUsername: false,
+        deleteAccount: false,
+        downloadComments: false,
+      },
     },
-    accountFeatures: {
-      changeUsername: false,
-      deleteAccount: false,
-      downloadComments: false,
-    },
-    createdAt: now,
   };
 
   // Create the new Tenant by merging it together with the defaults.
@@ -280,11 +284,13 @@ export async function updateTenant(
 export async function regenerateTenantSSOKey(mongo: Db, id: string) {
   // Construct the update.
   const update: DeepPartial<Tenant> = {
-    auth: {
-      integrations: {
-        sso: {
-          key: generateSSOKey(),
-          keyGeneratedAt: new Date(),
+    settings: {
+      auth: {
+        integrations: {
+          sso: {
+            key: generateSSOKey(),
+            keyGeneratedAt: new Date(),
+          },
         },
       },
     },
