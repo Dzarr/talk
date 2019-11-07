@@ -167,6 +167,7 @@ export type CreateStory = CreateStoryInput;
 export async function create(
   mongo: Db,
   tenant: Tenant,
+  siteID: string | null,
   storyID: string,
   storyURL: string,
   { metadata, closedAt }: CreateStory,
@@ -190,6 +191,7 @@ export async function create(
   let newStory = await createStory(
     mongo,
     tenant.id,
+    siteID,
     storyID,
     storyURL,
     input,
