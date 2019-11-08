@@ -33,7 +33,6 @@ import {
 import ConfigurationSubHeader from "../../ConfigurationSubHeader";
 import Header from "../../Header";
 import OnOffField from "../../OnOffField";
-import PermissionField from "../../PermissionField";
 import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
 import APIKeyField from "./APIKeyField";
@@ -185,10 +184,19 @@ const PerspectiveConfig: FunctionComponent<Props> = ({ disabled }) => {
             </InputDescription>
           </Localized>
           <div>
-            <PermissionField
+            <OnOffField
               name="integrations.perspective.doNotStore"
               disabled={disabled}
-              invert
+              onLabel={
+                <Localized id="configure-permissionField-allow">
+                  <span>Allow</span>
+                </Localized>
+              }
+              offLabel={
+                <Localized id="configure-permissionField-dontallow">
+                  <span>Don't Allow</span>
+                </Localized>
+              }
             />
           </div>
         </FormField>

@@ -2,7 +2,7 @@ import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
 
-import { parseStringBool } from "coral-framework/lib/form";
+import { booleanFormatter, parseStringBool } from "coral-framework/lib/form";
 import { Validator } from "coral-framework/lib/validation";
 import { RadioButton } from "coral-ui/components";
 
@@ -25,7 +25,7 @@ const OnOffField: FunctionComponent<Props> = ({
   offLabel,
   invert = false,
   parse = parseStringBool,
-  format,
+  format = booleanFormatter,
   className,
 }) => (
   <div className={className}>
@@ -33,8 +33,8 @@ const OnOffField: FunctionComponent<Props> = ({
       name={name}
       type="radio"
       value={!invert}
-      parse={parse ? parse : undefined}
-      format={format ? format : undefined}
+      parse={parse ? parse : parseStringBool}
+      format={format ? format : booleanFormatter}
     >
       {({ input }) => (
         <RadioButton id={`${input.name}-true`} disabled={disabled} {...input}>
@@ -49,8 +49,8 @@ const OnOffField: FunctionComponent<Props> = ({
     <Field
       name={name}
       type="radio"
-      parse={parse ? parse : undefined}
-      format={format ? format : undefined}
+      parse={parse ? parse : parseStringBool}
+      format={format ? format : booleanFormatter}
       value={invert}
     >
       {({ input }) => (
