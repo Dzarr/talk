@@ -5472,6 +5472,13 @@ type Mutation {
     @auth(roles: [ADMIN])
 
   createSite(input: CreateSiteInput!): CreateSitePayload! @auth(roles: [ADMIN])
+
+  updateCommunitySettings(
+    input: UpdateCommunitySettingsInput!
+  ): UpdateCommunityPayload! @auth(roles: [ADMIN])
+
+  updateSiteSettings(input: UpdateSiteSettingsInput!): UpdateSitePayload!
+    @auth(roles: [ADMIN])
 }
 
 ##################
@@ -5749,6 +5756,12 @@ type CreateOrganizationPayload {
   clientMutationId: String!
 }
 
+type UpdateOrganizationPayload {
+  id: ID!
+  organization: Organization!
+  clientMutationId: String!
+}
+
 type Community {
   id: ID!
   name: String!
@@ -5766,6 +5779,18 @@ input CreateCommunityInput {
 }
 
 type CreateCommunityPayload {
+  id: ID!
+  community: Community!
+  clientMutationId: String!
+}
+
+input UpdateCommunitySettingsInput {
+  clientMutationId: String!
+  communityID: ID!
+  settings: UpdateEntitySettingsInput!
+}
+
+type UpdateCommunityPayload {
   id: ID!
   community: Community!
   clientMutationId: String!
@@ -5793,6 +5818,18 @@ input CreateSiteInput {
 }
 
 type CreateSitePayload {
+  id: ID!
+  site: Site!
+  clientMutationId: String!
+}
+
+input UpdateSiteSettingsInput {
+  siteID: ID!
+  clientMutationId: String!
+  settings: UpdateEntitySettingsInput!
+}
+
+type UpdateSitePayload {
   id: ID!
   site: Site!
   clientMutationId: String!

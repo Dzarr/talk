@@ -3,6 +3,7 @@ import { Omit } from "coral-common/types";
 import {
   GQLAuth,
   GQLCommenterAccountFeatures,
+  GQLCommunityGuidelines,
   GQLEntitySettings,
   GQLExternalIntegrations,
   GQLFacebookAuthIntegration,
@@ -95,7 +96,6 @@ export type Settings = Pick<
 export type PartialSettings = Partial<
   Pick<
     GQLEntitySettings,
-    | "communityGuidelines"
     | "customCSSURL"
     | "editCommentWindowLength"
     | "email"
@@ -108,6 +108,7 @@ export type PartialSettings = Partial<
 > & {
   accountFeatures?: Partial<GQLCommenterAccountFeatures>;
   auth?: PartialAuth;
+  communityGuidelines?: Partial<GQLCommunityGuidelines>;
   integrations?: Partial<GQLExternalIntegrations>;
   live?: Partial<LiveConfiguration>;
   recentCommentHistory?: Partial<GQLRecentCommentHistoryConfiguration>;
