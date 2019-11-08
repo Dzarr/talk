@@ -33,8 +33,8 @@ const OnOffField: FunctionComponent<Props> = ({
       name={name}
       type="radio"
       value={!invert}
-      parse={parse}
-      format={format}
+      parse={parse ? parse : undefined}
+      format={format ? format : undefined}
     >
       {({ input }) => (
         <RadioButton id={`${input.name}-true`} disabled={disabled} {...input}>
@@ -49,8 +49,8 @@ const OnOffField: FunctionComponent<Props> = ({
     <Field
       name={name}
       type="radio"
-      parse={parse}
-      format={format}
+      parse={parse ? parse : undefined}
+      format={format ? format : undefined}
       value={invert}
     >
       {({ input }) => (

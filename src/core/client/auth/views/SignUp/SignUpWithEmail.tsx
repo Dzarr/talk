@@ -13,15 +13,15 @@ import {
   HorizontalGutter,
 } from "coral-ui/components";
 
-interface FormProps {
-  email: string;
-  username: string;
-  password: string;
-  confirmPassword: string;
-}
+// interface FormProps {
+//   email: string;
+//   username: string;
+//   password: string;
+//   confirmPassword: string;
+// }
 
 interface Props {
-  onSubmit: OnSubmit<FormProps>;
+  onSubmit: OnSubmit<any>;
 }
 
 const SignUp: FunctionComponent<Props> = props => {

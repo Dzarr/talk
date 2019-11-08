@@ -14,7 +14,7 @@ import SideBar from "./SideBar";
 
 interface Props {
   onSubmit: (settings: any, form: FormApi) => void;
-  onChange: (formState: FormState) => void;
+  onChange: (formState: FormState<any>) => void;
   children: React.ReactElement;
 }
 

@@ -26,6 +26,7 @@ const PermissionField: FunctionComponent<Props> = ({
             id={`${input.name}-allow`}
             disabled={disabled}
             {...input}
+            value={!invert ? "true" : "false"}
           >
             Allow
           </RadioButton>
@@ -39,6 +40,7 @@ const PermissionField: FunctionComponent<Props> = ({
             id={`${input.name}-dontAllow`}
             disabled={disabled}
             {...input}
+            value={invert ? "true" : "false"}
           >
             Don't allow
           </RadioButton>

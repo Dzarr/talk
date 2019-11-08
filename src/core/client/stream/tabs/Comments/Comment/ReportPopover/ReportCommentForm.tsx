@@ -25,25 +25,29 @@ const RadioField: FunctionComponent<
     PropTypesOf<typeof Field>,
     "validate" | "name" | "value" | "disabled" | "children"
   >
-> = ({ name, value, disabled, children }) => (
-  <Field name={name} type="radio" value={value}>
-    {({ input }) => (
-      <RadioButton
-        id={`reportComment-popover--${input.name}-${value}`}
-        disabled={disabled}
-        {...input}
-      >
-        {children}
-      </RadioButton>
-    )}
-  </Field>
-);
+> = ({ name, value, disabled, children }) => {
+  const v: string = typeof value === "string" ? value : "";
+  return (
+    <Field name={name} type="radio" value={v}>
+      {({ input }) => (
+        <RadioButton
+          id={`reportComment-popover--${input.name}-${v}`}
+          disabled={disabled}
+          value={v}
+          {...input}
+        >
+          {children}
+        </RadioButton>
+      )}
+    </Field>
+  );
+};
 
 interface Props {
   id: string;
   onCancel: () => void;
   onResize: () => void;
-  onSubmit: OnSubmit<FormProps>;
+  onSubmit: OnSubmit<any>;
 }
 
 export interface FormProps {

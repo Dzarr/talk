@@ -45,7 +45,7 @@ interface FormProps {
 
 const preventSubmit = (
   state: Pick<
-    FormState,
+    FormState<any>,
     | "pristine"
     | "hasSubmitErrors"
     | "hasValidationErrors"

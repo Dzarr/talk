@@ -45,7 +45,11 @@ interface Props {
 }
 
 const isEnabled: Condition = (value, values) =>
-  Boolean(values.integrations.perspective.enabled);
+  Boolean(
+    values.integrations &&
+      values.integrations.perspective &&
+      values.integrations.perspective.enabled
+  );
 
 const PerspectiveConfig: FunctionComponent<Props> = ({ disabled }) => {
   return (

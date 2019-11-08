@@ -125,7 +125,7 @@ const changeEmailContainer: FunctionComponent<Props> = ({
 
   const preventSubmit = (
     formState: Pick<
-      FormState,
+      FormState<any>,
       | "pristine"
       | "hasSubmitErrors"
       | "hasValidationErrors"

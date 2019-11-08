@@ -14,12 +14,12 @@ import CompleteAccountBox from "../../CompleteAccountBox";
 import ConfirmEmailField from "./ConfirmEmailField";
 import EmailField from "./EmailField";
 
-interface FormProps {
-  email: string;
-}
+// interface FormProps {
+//   email: string;
+// }
 
 export interface AddEmailAddressForm {
-  onSubmit: OnSubmit<FormProps>;
+  onSubmit: OnSubmit<any>;
 }
 
 const AddEmailAddress: FunctionComponent<AddEmailAddressForm> = props => {

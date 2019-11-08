@@ -1,8 +1,6 @@
-import { FormApi } from "final-form";
 import React from "react";
-import { ReactContext, withReactFinalForm } from "react-final-form";
+import { useForm } from "react-final-form";
 import { graphql } from "react-relay";
-import { InferableComponentEnhancer } from "recompose";
 
 import {
   FetchProp,
@@ -23,7 +21,6 @@ interface Props {
   onInitValues: OnInitValuesFct;
   disabled?: boolean;
   discoverOIDCConfiguration: FetchProp<typeof DiscoverOIDCConfigurationFetch>;
-  reactFinalForm: FormApi;
 }
 
 interface State {
@@ -36,7 +33,7 @@ class OIDCConfigContainer extends React.Component<Props, State> {
   };
 
   private handleDiscover = async () => {
-    const form = this.props.reactFinalForm;
+    const form = useForm();
     this.setState({ awaitingResponse: true });
     try {
       const config = await this.props.discoverOIDCConfiguration({
@@ -79,45 +76,39 @@ class OIDCConfigContainer extends React.Component<Props, State> {
   }
 }
 
-// (cvle) Fix `withReactFinalForm` typings (v4.1.0), forgive this, we'll
-// probably only use hooks in the future instead anyway ;-)
-const withForm = withReactFinalForm as InferableComponentEnhancer<ReactContext>;
-
-const enhanced = withForm(
-  withFetch(DiscoverOIDCConfigurationFetch)(
-    withFragmentContainer<Props>({
-      auth: graphql`
-        fragment OIDCConfigContainer_auth on Auth {
-          integrations {
-            oidc {
-              enabled
-              allowRegistration
-              targetFilter {
-                admin
-                stream
-              }
-              name
-              clientID
-              clientSecret
-              authorizationURL
-              tokenURL
-              jwksURI
-              issuer
+const enhanced = withFetch(DiscoverOIDCConfigurationFetch)(
+  withFragmentContainer<Props>({
+    auth: graphql`
+      fragment OIDCConfigContainer_auth on Auth {
+        integrations {
+          oidc {
+            enabled
+            allowRegistration
+            targetFilter {
+              admin
+              stream
             }
+            name
+            clientID
+            clientSecret
+            authorizationURL
+            tokenURL
+            jwksURI
+            issuer
           }
         }
-      `,
-      authReadOnly: graphql`
-        fragment OIDCConfigContainer_authReadOnly on Auth {
-          integrations {
-            oidc {
-              callbackURL
-            }
+      }
+    `,
+    authReadOnly: graphql`
+      fragment OIDCConfigContainer_authReadOnly on Auth {
+        integrations {
+          oidc {
+            callbackURL
           }
         }
-      `,
-    })(OIDCConfigContainer)
-  )
+      }
+    `,
+  })(OIDCConfigContainer)
 );
 
 export default enhanced;

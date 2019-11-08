@@ -28,7 +28,12 @@ const FacebookLink = () => (
 );
 
 const isEnabled: Condition = (value, values) =>
-  Boolean(values.auth.integrations.facebook.enabled);
+  Boolean(
+    values.auth &&
+      values.auth.integrations &&
+      values.auth.integrations.facebook &&
+      values.auth.integrations.facebook.enabled
+  );
 
 const FacebookConfig: FunctionComponent<Props> = ({
   disabled,

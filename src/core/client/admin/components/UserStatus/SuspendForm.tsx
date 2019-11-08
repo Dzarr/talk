@@ -23,6 +23,11 @@ interface Props {
   onSubmit: (duration: ScaledUnit, message: string) => void;
 }
 
+interface FormStateValues {
+  duration: any;
+  emailMessage: any;
+}
+
 const DURATIONS: ScaledUnit[] = [
   { original: 3600, value: "3600", unit: "hour", scaled: 1 }, // 1 hour
   { original: 10800, value: "10800", unit: "hour", scaled: 3 }, // 3 hours
@@ -66,7 +71,8 @@ const SuspendForm: FunctionComponent<Props> = ({
   const setMessageValue: Mutator = useCallback(
     ([name, newValue], state, { changeValue }) => {
       if (state.lastFormState) {
-        const { duration, emailMessage } = state.lastFormState.values;
+        const { duration, emailMessage } = state.lastFormState
+          .values as FormStateValues;
         const unit = DURATIONS.find(d => d.value === duration);
         const expectedEmailMessage = getMessageWithDuration(unit!);
         if (expectedEmailMessage === emailMessage) {
@@ -83,7 +89,8 @@ const SuspendForm: FunctionComponent<Props> = ({
     { changeValue }
   ) => {
     if (state.lastFormState && !checked) {
-      const { duration, emailMessage } = state.lastFormState.values;
+      const { duration, emailMessage } = state.lastFormState
+        .values as FormStateValues;
       const unit = DURATIONS.find(d => d.value === duration);
       const expectedEmailMessage = getMessageWithDuration(unit!);
       if (expectedEmailMessage !== emailMessage) {

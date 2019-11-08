@@ -13,12 +13,12 @@ import {
 import CompleteAccountBox from "../../CompleteAccountBox";
 import UsernameField from "./UsernameField";
 
-interface FormProps {
-  username: string;
-}
+// interface FormProps {
+//   username: string;
+// }
 
 export interface CreateUsernameForm {
-  onSubmit: OnSubmit<FormProps>;
+  onSubmit: OnSubmit<any>;
 }
 
 const CreateUsername: FunctionComponent<CreateUsernameForm> = props => {

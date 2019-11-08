@@ -13,12 +13,12 @@ import {
 import CompleteAccountBox from "../../CompleteAccountBox";
 import SetPasswordField from "./SetPasswordField";
 
-interface FormProps {
-  password: string;
-}
+// interface FormProps {
+//   password: string;
+// }
 
 export interface CreatePasswordForm {
-  onSubmit: OnSubmit<FormProps>;
+  onSubmit: OnSubmit<any>;
 }
 
 const CreatePassword: FunctionComponent<CreatePasswordForm> = props => {

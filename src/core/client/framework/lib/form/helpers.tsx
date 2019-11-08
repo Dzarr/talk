@@ -68,7 +68,7 @@ export const formatStringList = (v: string[] | null) => {
 };
 
 export type FieldMeta = Pick<
-  FieldRenderProps["meta"],
+  FieldRenderProps<any, HTMLElement>["meta"],
   "touched" | "error" | "submitError"
 >;
 

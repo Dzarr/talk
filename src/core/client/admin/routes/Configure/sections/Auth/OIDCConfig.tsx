@@ -46,7 +46,12 @@ const OIDCLink = () => (
 );
 
 const isEnabled: Condition<any, FormProps> = (value, values) =>
-  Boolean(values.auth.integrations.oidc.enabled);
+  Boolean(
+    values.auth &&
+      values.auth.integrations &&
+      values.auth.integrations.oidc &&
+      values.auth.integrations.oidc.enabled
+  );
 
 const OIDCConfig: FunctionComponent<Props> = ({
   disabled,

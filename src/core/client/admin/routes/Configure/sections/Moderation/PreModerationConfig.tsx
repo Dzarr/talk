@@ -58,7 +58,12 @@ const PreModerationConfig: FunctionComponent<Props> = ({ disabled }) => {
               Pre-moderate comments containing links sitewide
             </InputLabel>
           </Localized>
-          <OnOffField name="premodLinksEnable" disabled={disabled} />
+          <OnOffField
+            name="premodLinksEnable"
+            parse={parse}
+            format={format}
+            disabled={disabled}
+          />
         </FormField>
       </SectionContent>
     </HorizontalGutter>

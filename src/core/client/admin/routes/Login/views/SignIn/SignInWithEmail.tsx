@@ -25,13 +25,13 @@ import EmailField from "../../EmailField";
 
 import styles from "./SignInWithEmail.css";
 
-interface FormProps {
-  email: string;
-  password: string;
-}
+// interface FormProps {
+//   email: string;
+//   password: string;
+// }
 
 export interface SignInWithEmailForm {
-  onSubmit: OnSubmit<FormProps>;
+  onSubmit: OnSubmit<any>;
 }
 
 const SignInWithEmail: FunctionComponent<SignInWithEmailForm> = props => {

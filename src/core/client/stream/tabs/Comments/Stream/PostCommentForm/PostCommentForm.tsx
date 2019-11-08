@@ -23,8 +23,8 @@ interface FormProps {
 }
 
 interface Props {
-  onSubmit: OnSubmit<FormProps>;
-  onChange?: (state: FormState, form: FormApi) => void;
+  onSubmit: OnSubmit<any>;
+  onChange?: (state: FormState<any>, form: FormApi) => void;
   initialValues?: FormProps;
   min: number | null;
   max: number | null;
