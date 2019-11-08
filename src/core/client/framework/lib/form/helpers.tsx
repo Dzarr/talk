@@ -12,6 +12,10 @@ export type OnSubmit<T> = (
   form: FormApi
 ) => ErrorsObject<T> | Promise<ErrorsObject<T> | void> | void;
 
+export interface FormError {
+  "FINAL_FORM/form-error": any;
+}
+
 export const parseEmptyAsNull = (v: any) => {
   if (v === "") {
     return null;

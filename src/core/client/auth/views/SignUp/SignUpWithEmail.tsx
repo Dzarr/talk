@@ -5,7 +5,7 @@ import { Form } from "react-final-form";
 import EmailField from "coral-auth/components/EmailField";
 import SetPasswordField from "coral-auth/components/SetPasswordField";
 import UsernameField from "coral-auth/components/UsernameField";
-import { OnSubmit } from "coral-framework/lib/form";
+import { FormError, OnSubmit } from "coral-framework/lib/form";
 import {
   Button,
   ButtonIcon,
@@ -13,15 +13,17 @@ import {
   HorizontalGutter,
 } from "coral-ui/components";
 
-// interface FormProps {
-//   email: string;
-//   username: string;
-//   password: string;
-//   confirmPassword: string;
-// }
+interface FormProps {
+  email: string;
+  username: string;
+  password: string;
+  confirmPassword: string;
+}
+
+interface FormSubmitProps extends FormProps, FormError {}
 
 interface Props {
-  onSubmit: OnSubmit<any>;
+  onSubmit: OnSubmit<FormSubmitProps>;
 }
 
 const SignUp: FunctionComponent<Props> = props => {

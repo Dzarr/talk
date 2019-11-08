@@ -6,6 +6,7 @@ import { Field, Form } from "react-final-form";
 import {
   colorFromMeta,
   formatStringList,
+  FormError,
   OnSubmit,
   parseStringList,
   ValidationMessage,
@@ -25,9 +26,11 @@ import {
 
 import BackButton from "./BackButton";
 
-// interface FormProps {
-//   allowedDomains: string[];
-// }
+interface FormProps {
+  allowedDomains: string[];
+}
+
+interface FormSubmitProps extends FormProps, FormError {}
 
 interface Props {
   onGoToNextStep: () => void;
@@ -37,7 +40,10 @@ interface Props {
 }
 
 class PermittedDomainsStep extends Component<Props> {
-  private onSubmit: OnSubmit<any> = async ({ allowedDomains }, form) => {
+  private onSubmit: OnSubmit<FormSubmitProps> = async (
+    { allowedDomains },
+    form
+  ) => {
     try {
       await this.props.onInstall({ allowedDomains });
       return this.props.onGoToNextStep();

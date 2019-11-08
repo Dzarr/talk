@@ -6,6 +6,7 @@ import { Field, Form } from "react-final-form";
 import { PasswordField } from "coral-framework/components";
 import {
   colorFromMeta,
+  FormError,
   OnSubmit,
   ValidationMessage,
 } from "coral-framework/lib/form";
@@ -25,13 +26,15 @@ import EmailField from "../../EmailField";
 
 import styles from "./SignInWithEmail.css";
 
-// interface FormProps {
-//   email: string;
-//   password: string;
-// }
+interface FormProps {
+  email: string;
+  password: string;
+}
+
+interface FormSubmitProps extends FormProps, FormError {}
 
 export interface SignInWithEmailForm {
-  onSubmit: OnSubmit<any>;
+  onSubmit: OnSubmit<FormSubmitProps>;
 }
 
 const SignInWithEmail: FunctionComponent<SignInWithEmailForm> = props => {
