@@ -1,6 +1,7 @@
 import Cursor from "coral-server/graph/common/scalars/cursor";
 import Locale from "coral-server/graph/common/scalars/locale";
 import Time from "coral-server/graph/common/scalars/time";
+
 import { GQLResolver } from "coral-server/graph/tenant/schema/__generated__/types";
 
 import { ApproveCommentPayload } from "./ApproveCommentPayload";
@@ -18,6 +19,7 @@ import { CommentReleasedPayload } from "./CommentReleasedPayload";
 import { CommentReplyCreatedPayload } from "./CommentReplyCreatedPayload";
 import { CommentRevision } from "./CommentRevision";
 import { CommentStatusUpdatedPayload } from "./CommentStatusUpdatedPayload";
+import { Community } from "./Community";
 import { DisableCommenting } from "./DisableCommenting";
 import { FacebookAuthIntegration } from "./FacebookAuthIntegration";
 import { FeatureCommentPayload } from "./FeatureCommentPayload";
@@ -36,6 +38,7 @@ import { Profile } from "./Profile";
 import { Query } from "./Query";
 import { RecentCommentHistory } from "./RecentCommentHistory";
 import { RejectCommentPayload } from "./RejectCommentPayload";
+import { Site } from "./Site";
 import { Story } from "./Story";
 import { StorySettings } from "./StorySettings";
 import { Subscription } from "./Subscription";
@@ -94,6 +97,8 @@ const Resolvers: GQLResolver = {
   UserStatus,
   UsernameStatus,
   ModeratorNote,
+  Community,
+  Site,
 };
 
 export default Resolvers;
