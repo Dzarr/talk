@@ -34,7 +34,7 @@ export interface TenantResource {
 }
 
 export interface TenantSettings
-  extends Pick<GQLSettings, "domain" | "allowedDomains" | "organization"> {
+  extends Pick<GQLSettings, "domain" | "allowedDomains"> {
   readonly id: string;
 
   /**

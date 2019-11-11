@@ -28,9 +28,7 @@ class OrganizationURLConfigContainer extends React.Component<Props> {
 const enhanced = withFragmentContainer<Props>({
   settings: graphql`
     fragment OrganizationURLConfigContainer_settings on Settings {
-      organization {
-        url
-      }
+      url
     }
   `,
 })(OrganizationURLConfigContainer);
