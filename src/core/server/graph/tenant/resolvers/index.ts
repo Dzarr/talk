@@ -32,6 +32,7 @@ import { ModerationQueues } from "./ModerationQueues";
 import { ModeratorNote } from "./ModeratorNote";
 import { Mutation } from "./Mutation";
 import { OIDCAuthIntegration } from "./OIDCAuthIntegration";
+import { Organization } from "./Organization";
 import { PremodStatus } from "./PremodStatus";
 import { PremodStatusHistory } from "./PremodStatusHistory";
 import { Profile } from "./Profile";
@@ -99,6 +100,7 @@ const Resolvers: GQLResolver = {
   ModeratorNote,
   Community,
   Site,
+  Organization,
 };
 
 export default Resolvers;
