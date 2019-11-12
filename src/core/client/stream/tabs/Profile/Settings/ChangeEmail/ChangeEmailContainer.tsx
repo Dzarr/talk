@@ -101,7 +101,7 @@ const changeEmailContainer: FunctionComponent<Props> = ({
         };
       }
 
-      form.reset();
+      setTimeout(form.reset);
       setShowEditForm(false);
 
       return;

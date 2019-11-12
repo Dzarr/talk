@@ -36,7 +36,7 @@ exports[`accepts correct password 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -131,7 +131,6 @@ exports[`accepts correct password 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value="testtest"
               />
               <div
@@ -219,7 +218,7 @@ exports[`accepts valid email 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value="hans@test.com"
             />
           </div>
@@ -301,7 +300,6 @@ exports[`accepts valid email 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div
@@ -402,7 +400,7 @@ exports[`accepts valid username 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -484,7 +482,6 @@ exports[`accepts valid username 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div
@@ -585,7 +582,7 @@ exports[`auth configuration renders all auth enabled 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -654,7 +651,6 @@ exports[`auth configuration renders all auth enabled 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div
@@ -899,7 +895,7 @@ exports[`checks for invalid characters in username 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -994,7 +990,6 @@ exports[`checks for invalid characters in username 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div
@@ -1095,7 +1090,7 @@ exports[`checks for invalid email 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value="invalid-email"
             />
           </div>
@@ -1190,7 +1185,6 @@ exports[`checks for invalid email 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div
@@ -1291,7 +1285,7 @@ exports[`checks for too long username 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -1386,7 +1380,6 @@ exports[`checks for too long username 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div
@@ -1487,7 +1480,7 @@ exports[`checks for too short password 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -1582,7 +1575,6 @@ exports[`checks for too short password 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value="pass"
               />
               <div
@@ -1683,7 +1675,7 @@ exports[`checks for too short username 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -1778,7 +1770,6 @@ exports[`checks for too short username 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div
@@ -1920,7 +1911,7 @@ exports[`renders sign up form 1`] = `
                     onChange={[Function]}
                     onFocus={[Function]}
                     placeholder="Email Address"
-                    type="email"
+                    type="text"
                     value=""
                   />
                 </div>
@@ -1989,7 +1980,6 @@ exports[`renders sign up form 1`] = `
                       onFocus={[Function]}
                       placeholder="Password"
                       spellCheck={false}
-                      type="password"
                       value=""
                     />
                     <div
@@ -2080,7 +2070,7 @@ exports[`shows error when submitting empty form 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -2175,7 +2165,6 @@ exports[`shows error when submitting empty form 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div
@@ -2283,7 +2272,7 @@ exports[`shows server error 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value="hans@test.com"
             />
           </div>
@@ -2352,7 +2341,6 @@ exports[`shows server error 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value="testtest"
               />
               <div
@@ -2440,7 +2428,7 @@ exports[`submits form successfully 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -2509,7 +2497,6 @@ exports[`submits form successfully 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div

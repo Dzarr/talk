@@ -79,7 +79,7 @@ const ConfirmPage: FunctionComponent<Props> = ({
         };
       }
 
-      form.reset();
+      setTimeout(form.reset);
 
       onProceed();
       return;

@@ -29,7 +29,7 @@ exports[`accepts correct password 1`] = `
           onChange={[Function]}
           onFocus={[Function]}
           placeholder="Email Address"
-          type="email"
+          type="text"
           value=""
         />
       </div>
@@ -75,7 +75,6 @@ exports[`accepts correct password 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value="testtest"
           />
           <div
@@ -166,7 +165,7 @@ exports[`accepts valid email 1`] = `
           onChange={[Function]}
           onFocus={[Function]}
           placeholder="Email Address"
-          type="email"
+          type="text"
           value="hans@test.com"
         />
       </div>
@@ -199,7 +198,6 @@ exports[`accepts valid email 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value=""
           />
           <div
@@ -310,7 +308,7 @@ exports[`auth configuration renders all auth enabled 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Email Address"
-              type="email"
+              type="text"
               value=""
             />
           </div>
@@ -343,7 +341,6 @@ exports[`auth configuration renders all auth enabled 1`] = `
                 onFocus={[Function]}
                 placeholder="Password"
                 spellCheck={false}
-                type="password"
                 value=""
               />
               <div
@@ -596,7 +593,7 @@ exports[`checks for invalid email 1`] = `
           onChange={[Function]}
           onFocus={[Function]}
           placeholder="Email Address"
-          type="email"
+          type="text"
           value="invalid-email"
         />
       </div>
@@ -642,7 +639,6 @@ exports[`checks for invalid email 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value=""
           />
           <div
@@ -794,7 +790,7 @@ exports[`renders sign in view 1`] = `
                     onChange={[Function]}
                     onFocus={[Function]}
                     placeholder="Email Address"
-                    type="email"
+                    type="text"
                     value=""
                   />
                 </div>
@@ -827,7 +823,6 @@ exports[`renders sign in view 1`] = `
                       onFocus={[Function]}
                       placeholder="Password"
                       spellCheck={false}
-                      type="password"
                       value=""
                     />
                     <div
@@ -979,7 +974,7 @@ exports[`renders sign in view with error 1`] = `
                 onChange={[Function]}
                 onFocus={[Function]}
                 placeholder="Email Address"
-                type="email"
+                type="text"
                 value=""
               />
             </div>
@@ -1012,7 +1007,6 @@ exports[`renders sign in view with error 1`] = `
                   onFocus={[Function]}
                   placeholder="Password"
                   spellCheck={false}
-                  type="password"
                   value=""
                 />
                 <div
@@ -1101,7 +1095,7 @@ exports[`shows error when submitting empty form 1`] = `
         className="TextField-root TextField-fullWidth"
       >
         <input
-          className="TextField-input TextField-colorError"
+          className="TextField-input TextField-colorRegular"
           disabled={false}
           id="email"
           name="email"
@@ -1109,22 +1103,9 @@ exports[`shows error when submitting empty form 1`] = `
           onChange={[Function]}
           onFocus={[Function]}
           placeholder="Email Address"
-          type="email"
+          type="text"
           value=""
         />
-      </div>
-      <div
-        className="Message-root Message-colorError Message-fullWidth"
-      >
-        <i
-          aria-hidden="true"
-          className="Icon-root Icon-sm MessageIcon-root"
-        >
-          warning
-        </i>
-        <span>
-          This field is required.
-        </span>
       </div>
     </div>
     <div
@@ -1146,7 +1127,7 @@ exports[`shows error when submitting empty form 1`] = `
             autoCapitalize="off"
             autoComplete="off"
             autoCorrect="off"
-            className="PasswordField-colorError PasswordField-fullWidth PasswordField-input"
+            className="PasswordField-colorRegular PasswordField-fullWidth PasswordField-input"
             disabled={false}
             id="password"
             name="password"
@@ -1155,7 +1136,6 @@ exports[`shows error when submitting empty form 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value=""
           />
           <div
@@ -1174,19 +1154,6 @@ exports[`shows error when submitting empty form 1`] = `
             </i>
           </div>
         </div>
-      </div>
-      <div
-        className="Message-root Message-colorError Message-fullWidth"
-      >
-        <i
-          aria-hidden="true"
-          className="Icon-root Icon-sm MessageIcon-root"
-        >
-          warning
-        </i>
-        <span>
-          This field is required.
-        </span>
       </div>
       <div
         className="Box-root Flex-root Flex-flex Flex-justifyFlexEnd"
@@ -1266,7 +1233,7 @@ exports[`shows server error 1`] = `
           onChange={[Function]}
           onFocus={[Function]}
           placeholder="Email Address"
-          type="email"
+          type="text"
           value="hans@test.com"
         />
       </div>
@@ -1299,7 +1266,6 @@ exports[`shows server error 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value="testtest"
           />
           <div
@@ -1390,7 +1356,7 @@ exports[`submits form successfully 1`] = `
           onChange={[Function]}
           onFocus={[Function]}
           placeholder="Email Address"
-          type="email"
+          type="text"
           value=""
         />
       </div>
@@ -1423,7 +1389,6 @@ exports[`submits form successfully 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value=""
           />
           <div

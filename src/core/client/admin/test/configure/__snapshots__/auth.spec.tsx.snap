@@ -1,486 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`change settings: during submit: oidc without errors 1`] = `
-<div
-  className="ConfigBox-root"
-  data-testid="configure-auth-oidc-container"
->
-  <div
-    className="Box-root Flex-root ConfigBox-title Flex-flex Flex-justifySpaceBetween"
-  >
-    <div>
-      <span>
-        Login with OpenID Connect
-      </span>
-    </div>
-    <div>
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <div
-          className="CheckBox-root"
-        >
-          <input
-            checked={true}
-            className="CheckBox-input"
-            disabled={true}
-            id="auth.integrations.oidc.enabled"
-            name="auth.integrations.oidc.enabled"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            type="checkbox"
-            value={true}
-          />
-          <label
-            className="CheckBox-label CheckBox-labelLight"
-            htmlFor="auth.integrations.oidc.enabled"
-          >
-            <span
-              className="CheckBox-labelSpan"
-            >
-              Enabled
-            </span>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="ConfigBox-content"
-  >
-    <div
-      className="Box-root HorizontalGutter-root HorizontalGutter-double"
-    >
-      <p
-        className="Box-root Typography-root Typography-bodyCopy Typography-colorTextPrimary"
-      >
-        To learn more: 
-        <a
-          className="TextLink-root"
-          href="https://openid.net/connect/"
-          target="_blank"
-        >
-          https://openid.net/connect/
-          <i
-            aria-hidden="true"
-            className="Icon-root Icon-xs TextLink-icon"
-          >
-            open_in_new
-          </i>
-        </a>
-      </p>
-      <hr
-        className="HorizontalRule-root"
-      />
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          Redirect URI
-        </label>
-        <div
-          className="Box-root Flex-root Flex-flex Flex-halfItemGutter Flex-alignCenter Flex-directionRow gutter"
-        >
-          <div
-            className="TextField-root TextField-fullWidth"
-          >
-            <input
-              className="TextField-input TextField-colorRegular"
-              name="redirectURI"
-              placeholder=""
-              readOnly={true}
-              type="text"
-              value="http://localhost/oidc/callback"
-            />
-          </div>
-          <button
-            className="BaseButton-root Button-root Button-sizeSmall Button-colorPrimary Button-variantFilled"
-            data-color="primary"
-            data-variant="filled"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            type="button"
-          >
-            <span>
-              Copy
-            </span>
-          </button>
-        </div>
-      </div>
-      <hr
-        className="HorizontalRule-root"
-      />
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          Provider name
-        </label>
-        <p
-          className="Box-root Typography-root Typography-fieldDescription Typography-colorTextSecondary"
-        >
-          The provider of the OpenID Connect integration. This will be used when the name of the provider
-needs to be displayed, e.g. “Log in with &lt;Facebook&gt;”.
-        </p>
-        <div
-          className="TextField-root TextField-fullWidth"
-        >
-          <input
-            autoCapitalize="off"
-            autoComplete="off"
-            autoCorrect="off"
-            className="TextField-input TextField-colorRegular"
-            disabled={true}
-            name="auth.integrations.oidc.name"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            spellCheck={false}
-            type="text"
-            value="name"
-          />
-        </div>
-      </div>
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          Client ID
-        </label>
-        <div
-          className="TextField-root TextField-fullWidth"
-        >
-          <input
-            autoCapitalize="off"
-            autoComplete="off"
-            autoCorrect="off"
-            className="TextField-input TextField-colorRegular"
-            disabled={true}
-            name="auth.integrations.oidc.clientID"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            spellCheck={false}
-            type="text"
-            value="clientID"
-          />
-        </div>
-      </div>
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          Client secret
-        </label>
-        <div
-          className="PasswordField-fullWidth PasswordField-root"
-        >
-          <div
-            className="PasswordField-wrapper"
-          >
-            <input
-              autoCapitalize="off"
-              autoComplete="off"
-              autoCorrect="off"
-              className="PasswordField-colorRegular PasswordField-fullWidth PasswordField-input"
-              disabled={true}
-              name="auth.integrations.oidc.clientSecret"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              placeholder=""
-              spellCheck={false}
-              type="password"
-              value="clientSecret"
-            />
-            <div
-              className="PasswordField-icon"
-              onClick={[Function]}
-              onKeyUp={[Function]}
-              role="button"
-              tabIndex={0}
-              title="Hide Client Secret"
-            >
-              <i
-                aria-hidden="true"
-                className="Icon-root Icon-sm"
-              >
-                visibility
-              </i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          Issuer
-        </label>
-        <p
-          className="Box-root Typography-root Typography-fieldDescription Typography-colorTextSecondary"
-        >
-          After entering your Issuer information, click the Discover button to have Coral complete
-the remaining fields. You may also enter the information manually.
-        </p>
-        <div
-          className="Box-root Flex-root Flex-flex Flex-halfItemGutter Flex-alignCenter Flex-directionRow gutter"
-        >
-          <div
-            className="TextField-root TextField-fullWidth"
-          >
-            <input
-              autoCapitalize="off"
-              autoComplete="off"
-              autoCorrect="off"
-              className="TextField-input TextField-colorRegular"
-              disabled={true}
-              name="auth.integrations.oidc.issuer"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              placeholder=""
-              spellCheck={false}
-              type="text"
-              value="http://issuer.com"
-            />
-          </div>
-          <button
-            className="BaseButton-root Button-root Button-sizeSmall Button-colorPrimary Button-variantFilled Button-disabled"
-            data-color="primary"
-            data-variant="filled"
-            disabled={true}
-            id="configure-auth-oidc-discover"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            type="button"
-          >
-            Discover
-          </button>
-        </div>
-      </div>
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          Authorization URL
-        </label>
-        <div
-          className="TextField-root TextField-fullWidth"
-        >
-          <input
-            autoCapitalize="off"
-            autoComplete="off"
-            autoCorrect="off"
-            className="TextField-input TextField-colorRegular"
-            disabled={true}
-            name="auth.integrations.oidc.authorizationURL"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            spellCheck={false}
-            type="text"
-            value="http://issuer.com/authorizationURL"
-          />
-        </div>
-      </div>
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          Token URL
-        </label>
-        <div
-          className="TextField-root TextField-fullWidth"
-        >
-          <input
-            autoCapitalize="off"
-            autoComplete="off"
-            autoCorrect="off"
-            className="TextField-input TextField-colorRegular"
-            disabled={true}
-            name="auth.integrations.oidc.tokenURL"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            spellCheck={false}
-            type="text"
-            value="http://issuer.com/tokenURL"
-          />
-        </div>
-      </div>
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          JWKS URI
-        </label>
-        <div
-          className="TextField-root TextField-fullWidth"
-        >
-          <input
-            autoCapitalize="off"
-            autoComplete="off"
-            autoCorrect="off"
-            className="TextField-input TextField-colorRegular"
-            disabled={true}
-            name="auth.integrations.oidc.jwksURI"
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            spellCheck={false}
-            type="text"
-            value="http://issuer.com/jwksURI"
-          />
-        </div>
-      </div>
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          <span>
-            Use OpenID Connect login on
-          </span>
-        </label>
-        <div
-          className="Box-root Flex-root Flex-flex Flex-doubleItemGutter Flex-directionRow gutter"
-        >
-          <div
-            className="CheckBox-root"
-          >
-            <input
-              checked={true}
-              className="CheckBox-input"
-              disabled={true}
-              id="auth.integrations.oidc.targetFilter.admin"
-              name="auth.integrations.oidc.targetFilter.admin"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              type="checkbox"
-              value={true}
-            />
-            <label
-              className="CheckBox-label"
-              htmlFor="auth.integrations.oidc.targetFilter.admin"
-            >
-              <span
-                className="CheckBox-labelSpan"
-              >
-                Coral Admin
-              </span>
-            </label>
-          </div>
-          <div
-            className="CheckBox-root"
-          >
-            <input
-              checked={true}
-              className="CheckBox-input"
-              disabled={true}
-              id="auth.integrations.oidc.targetFilter.stream"
-              name="auth.integrations.oidc.targetFilter.stream"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              type="checkbox"
-              value={true}
-            />
-            <label
-              className="CheckBox-label"
-              htmlFor="auth.integrations.oidc.targetFilter.stream"
-            >
-              <span
-                className="CheckBox-labelSpan"
-              >
-                Comment Stream
-              </span>
-            </label>
-          </div>
-        </div>
-      </div>
-      <div
-        className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-      >
-        <label
-          className="Box-root Typography-root Typography-inputLabel Typography-colorTextPrimary InputLabel-root"
-        >
-          Registration
-        </label>
-        <p
-          className="Box-root Typography-root Typography-fieldDescription Typography-colorTextSecondary"
-        >
-          Allow users that have not signed up before with this authentication
-integration to register for a new account.
-        </p>
-        <div
-          className="Box-root HorizontalGutter-root FormField-root HorizontalGutter-half"
-        >
-          <div
-            className="CheckBox-root"
-          >
-            <input
-              checked={false}
-              className="CheckBox-input"
-              disabled={true}
-              id="auth.integrations.oidc.allowRegistration"
-              name="auth.integrations.oidc.allowRegistration"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              type="checkbox"
-              value={false}
-            />
-            <label
-              className="CheckBox-label"
-              htmlFor="auth.integrations.oidc.allowRegistration"
-            >
-              <span
-                className="CheckBox-labelSpan"
-              >
-                Allow Registration
-              </span>
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`change settings: enable facebook configure box 1`] = `
 <div
   className="ConfigBox-root"
@@ -655,7 +174,6 @@ For more information visit:
               onFocus={[Function]}
               placeholder=""
               spellCheck={false}
-              type="password"
               value="myClientSecret"
             />
             <div
@@ -693,7 +211,7 @@ For more information visit:
             className="CheckBox-root"
           >
             <input
-              checked={true}
+              checked={false}
               className="CheckBox-input"
               disabled={false}
               id="auth.integrations.facebook.targetFilter.admin"
@@ -702,7 +220,7 @@ For more information visit:
               onChange={[Function]}
               onFocus={[Function]}
               type="checkbox"
-              value={true}
+              value=""
             />
             <label
               className="CheckBox-label"
@@ -719,7 +237,7 @@ For more information visit:
             className="CheckBox-root"
           >
             <input
-              checked={true}
+              checked={false}
               className="CheckBox-input"
               disabled={false}
               id="auth.integrations.facebook.targetFilter.stream"
@@ -728,7 +246,7 @@ For more information visit:
               onChange={[Function]}
               onFocus={[Function]}
               type="checkbox"
-              value={true}
+              value=""
             />
             <label
               className="CheckBox-label"
@@ -764,7 +282,7 @@ integration to register for a new account.
             className="CheckBox-root"
           >
             <input
-              checked={true}
+              checked={false}
               className="CheckBox-input"
               disabled={false}
               id="auth.integrations.facebook.allowRegistration"
@@ -773,7 +291,7 @@ integration to register for a new account.
               onChange={[Function]}
               onFocus={[Function]}
               type="checkbox"
-              value={true}
+              value=""
             />
             <label
               className="CheckBox-label"
@@ -998,7 +516,6 @@ needs to be displayed, e.g. “Log in with &lt;Facebook&gt;”.
               onFocus={[Function]}
               placeholder=""
               spellCheck={false}
-              type="password"
               value=""
             />
             <div
@@ -1505,7 +1022,6 @@ needs to be displayed, e.g. “Log in with &lt;Facebook&gt;”.
               onFocus={[Function]}
               placeholder=""
               spellCheck={false}
-              type="password"
               value=""
             />
             <div
@@ -2120,7 +1636,7 @@ compliance.
                           className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="RadioButton-input"
                             disabled={false}
                             id="accountFeatures.changeUsername-true"
@@ -2144,7 +1660,7 @@ compliance.
                           className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="RadioButton-input"
                             disabled={false}
                             id="accountFeatures.changeUsername-false"
@@ -2198,7 +1714,7 @@ compliance.
                           className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="RadioButton-input"
                             disabled={false}
                             id="accountFeatures.downloadComments-true"
@@ -2222,7 +1738,7 @@ compliance.
                           className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="RadioButton-input"
                             disabled={false}
                             id="accountFeatures.downloadComments-false"
@@ -2277,7 +1793,7 @@ address from the site and the database.
                           className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="RadioButton-input"
                             disabled={false}
                             id="accountFeatures.deleteAccount-true"
@@ -2301,7 +1817,7 @@ address from the site and the database.
                           className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="RadioButton-input"
                             disabled={false}
                             id="accountFeatures.deleteAccount-false"
@@ -2370,7 +1886,7 @@ address from the site and the database.
                       placeholder=""
                       spellCheck={false}
                       type="text"
-                      value="90"
+                      value=""
                     />
                   </div>
                   <span
@@ -2384,7 +1900,7 @@ address from the site and the database.
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
-                      value="86400"
+                      value="3600"
                     >
                       <option
                         value="3600"
@@ -2439,7 +1955,7 @@ address from the site and the database.
                         className="CheckBox-root"
                       >
                         <input
-                          checked={true}
+                          checked={false}
                           className="CheckBox-input"
                           disabled={false}
                           id="auth.integrations.local.enabled"
@@ -2448,7 +1964,7 @@ address from the site and the database.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value={true}
+                          value=""
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -2487,16 +2003,16 @@ address from the site and the database.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
-                            disabled={false}
+                            disabled={true}
                             id="auth.integrations.local.targetFilter.admin"
                             name="auth.integrations.local.targetFilter.admin"
                             onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -2513,16 +2029,16 @@ address from the site and the database.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
-                            disabled={false}
+                            disabled={true}
                             id="auth.integrations.local.targetFilter.stream"
                             name="auth.integrations.local.targetFilter.stream"
                             onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -2558,16 +2074,16 @@ integration to register for a new account.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
-                            disabled={false}
+                            disabled={true}
                             id="auth.integrations.local.allowRegistration"
                             name="auth.integrations.local.allowRegistration"
                             onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -2614,7 +2130,7 @@ integration to register for a new account.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value={false}
+                          value=""
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -2789,7 +2305,6 @@ needs to be displayed, e.g. “Log in with &lt;Facebook&gt;”.
                             onFocus={[Function]}
                             placeholder=""
                             spellCheck={false}
-                            type="password"
                             value=""
                           />
                           <div
@@ -2965,7 +2480,7 @@ the remaining fields. You may also enter the information manually.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.oidc.targetFilter.admin"
@@ -2974,7 +2489,7 @@ the remaining fields. You may also enter the information manually.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -2991,7 +2506,7 @@ the remaining fields. You may also enter the information manually.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.oidc.targetFilter.stream"
@@ -3000,7 +2515,7 @@ the remaining fields. You may also enter the information manually.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3045,7 +2560,7 @@ integration to register for a new account.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={false}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3091,7 +2606,7 @@ integration to register for a new account.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value={false}
+                          value=""
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -3216,7 +2731,7 @@ and all signed-in users will be signed out.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.sso.targetFilter.admin"
@@ -3225,7 +2740,7 @@ and all signed-in users will be signed out.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3242,7 +2757,7 @@ and all signed-in users will be signed out.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.sso.targetFilter.stream"
@@ -3251,7 +2766,7 @@ and all signed-in users will be signed out.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3287,7 +2802,7 @@ integration to register for a new account.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.sso.allowRegistration"
@@ -3296,7 +2811,7 @@ integration to register for a new account.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3342,7 +2857,7 @@ integration to register for a new account.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value={false}
+                          value=""
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -3486,7 +3001,6 @@ to create and set up a web application. For more information visit:
                             onFocus={[Function]}
                             placeholder=""
                             spellCheck={false}
-                            type="password"
                             value=""
                           />
                           <div
@@ -3524,7 +3038,7 @@ to create and set up a web application. For more information visit:
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.google.targetFilter.admin"
@@ -3533,7 +3047,7 @@ to create and set up a web application. For more information visit:
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3550,7 +3064,7 @@ to create and set up a web application. For more information visit:
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.google.targetFilter.stream"
@@ -3559,7 +3073,7 @@ to create and set up a web application. For more information visit:
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3595,7 +3109,7 @@ integration to register for a new account.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.google.allowRegistration"
@@ -3604,7 +3118,7 @@ integration to register for a new account.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3651,7 +3165,7 @@ integration to register for a new account.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value={false}
+                          value=""
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -3795,7 +3309,6 @@ For more information visit:
                             onFocus={[Function]}
                             placeholder=""
                             spellCheck={false}
-                            type="password"
                             value=""
                           />
                           <div
@@ -3833,7 +3346,7 @@ For more information visit:
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.facebook.targetFilter.admin"
@@ -3842,7 +3355,7 @@ For more information visit:
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3859,7 +3372,7 @@ For more information visit:
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.facebook.targetFilter.stream"
@@ -3868,7 +3381,7 @@ For more information visit:
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"
@@ -3904,7 +3417,7 @@ integration to register for a new account.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={true}
+                            checked={false}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.facebook.allowRegistration"
@@ -3913,7 +3426,7 @@ integration to register for a new account.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value={true}
+                            value=""
                           />
                           <label
                             className="CheckBox-label"

@@ -17,7 +17,8 @@ class AddEmailAddressContainer extends Component<Props> {
   >["onSubmit"] = async (input, form) => {
     try {
       await this.props.setEmail({ email: input.email });
-      return form.reset();
+      setTimeout(form.reset);
+      return;
     } catch (error) {
       return { [FORM_ERROR]: error.message };
     }

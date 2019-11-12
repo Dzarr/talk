@@ -44,7 +44,7 @@ const UserDrawerNotesContainer: FunctionComponent<Props> = ({
         userID: user.id,
         body,
       });
-      form.reset();
+      setTimeout(form.reset);
     },
     [user]
   );

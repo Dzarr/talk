@@ -56,7 +56,7 @@ const ChangePassword: FunctionComponent<Props> = ({ onResetPassword }) => {
       }
 
       // Reset the form now that we're done.
-      form.reset();
+      setTimeout(form.reset);
 
       return;
     },

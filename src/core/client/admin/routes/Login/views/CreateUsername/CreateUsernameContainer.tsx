@@ -18,7 +18,8 @@ class CreateUsernameContainer extends Component<Props> {
   ) => {
     try {
       await this.props.setUsername({ username: input.username });
-      return form.reset();
+      setTimeout(form.reset);
+      return;
     } catch (error) {
       return { [FORM_ERROR]: error.message };
     }

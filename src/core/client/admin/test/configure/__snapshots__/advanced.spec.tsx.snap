@@ -255,7 +255,7 @@ When disabled, users will have to refresh the page to see new comments.
                     className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                   >
                     <input
-                      checked={true}
+                      checked={false}
                       className="RadioButton-input"
                       disabled={false}
                       id="live.enabled-true"
@@ -279,7 +279,7 @@ When disabled, users will have to refresh the page to see new comments.
                     className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                   >
                     <input
-                      checked={false}
+                      checked={true}
                       className="RadioButton-input"
                       disabled={false}
                       id="live.enabled-false"
@@ -342,7 +342,7 @@ https://domain.com).
                     placeholder=""
                     spellCheck={false}
                     type="text"
-                    value="http://localhost:8080"
+                    value=""
                   />
                 </div>
               </div>
@@ -457,7 +457,7 @@ https://domain.com).
                       className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                     >
                       <input
-                        checked={true}
+                        checked={false}
                         className="RadioButton-input"
                         disabled={false}
                         id="stories.scraping.enabled-true"
@@ -481,7 +481,7 @@ https://domain.com).
                       className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
                     >
                       <input
-                        checked={false}
+                        checked={true}
                         className="RadioButton-input"
                         disabled={false}
                         id="stories.scraping.enabled-false"

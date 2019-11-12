@@ -89,7 +89,7 @@ exports[`renders configure 1`] = `
               className="CheckBox-root"
             >
               <input
-                checked={true}
+                checked={false}
                 className="CheckBox-input"
                 disabled={false}
                 id="live.enabled"
@@ -98,7 +98,7 @@ exports[`renders configure 1`] = `
                 onChange={[Function]}
                 onFocus={[Function]}
                 type="checkbox"
-                value={true}
+                value=""
               />
               <label
                 className="CheckBox-label"
@@ -187,7 +187,7 @@ unusual situation of an article getting so much traffic that the comments are lo
                 onChange={[Function]}
                 onFocus={[Function]}
                 type="checkbox"
-                value={false}
+                value=""
               />
               <label
                 className="CheckBox-label"
@@ -230,7 +230,7 @@ unusual situation of an article getting so much traffic that the comments are lo
                 onChange={[Function]}
                 onFocus={[Function]}
                 type="checkbox"
-                value={false}
+                value=""
               />
               <label
                 className="CheckBox-label"

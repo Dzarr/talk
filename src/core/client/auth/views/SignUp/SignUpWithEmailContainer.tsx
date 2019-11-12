@@ -21,7 +21,8 @@ class SignUpContainer extends Component<SignUpContainerProps> {
         password: input.password,
         username: input.username,
       });
-      return form.reset();
+      setTimeout(form.reset);
+      return;
     } catch (error) {
       return { [FORM_ERROR]: error.message };
     }

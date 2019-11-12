@@ -136,7 +136,7 @@ const ChangeUsernameContainer: FunctionComponent<Props> = ({
         };
       }
 
-      form.reset();
+      setTimeout(form.reset);
       setShowEditForm(false);
       setShowSuccessMessage(true);
 

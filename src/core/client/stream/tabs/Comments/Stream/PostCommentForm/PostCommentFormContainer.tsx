@@ -129,7 +129,7 @@ export class PostCommentFormContainer extends Component<Props, State> {
         })
       );
       if (submitStatus !== "RETRY") {
-        form.reset({});
+        setTimeout(() => form.reset({}));
       }
       this.setState({ submitStatus, nudge: true });
     } catch (error) {
@@ -168,7 +168,7 @@ export class PostCommentFormContainer extends Component<Props, State> {
     }
     // Reset errors whenever user clears the form.
     if (state.touched && state.touched.body && !state.values.body) {
-      form.reset({});
+      setTimeout(() => form.reset({}));
     }
   };
 

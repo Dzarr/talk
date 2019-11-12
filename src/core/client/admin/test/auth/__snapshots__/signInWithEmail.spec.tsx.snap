@@ -75,7 +75,6 @@ exports[`accepts correct password 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value="testtest"
           />
           <div
@@ -199,7 +198,6 @@ exports[`accepts valid email 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value=""
           />
           <div
@@ -349,7 +347,6 @@ exports[`checks for invalid email 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value=""
           />
           <div
@@ -533,7 +530,6 @@ exports[`renders sign in form 1`] = `
                       onFocus={[Function]}
                       placeholder="Password"
                       spellCheck={false}
-                      type="password"
                       value=""
                     />
                     <div
@@ -684,7 +680,6 @@ exports[`shows error when submitting empty form 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value=""
           />
           <div
@@ -828,7 +823,6 @@ exports[`shows server error 1`] = `
             onFocus={[Function]}
             placeholder="Password"
             spellCheck={false}
-            type="password"
             value="testtest"
           />
           <div

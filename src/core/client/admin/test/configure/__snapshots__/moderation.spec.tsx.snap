@@ -297,7 +297,7 @@ approved by a moderator.
                       placeholder=""
                       spellCheck={false}
                       type="text"
-                      value="7"
+                      value=""
                     />
                   </div>
                   <p
@@ -405,7 +405,7 @@ comments pending for toxicity, spam or pre-moderation.
                     placeholder=""
                     spellCheck={false}
                     type="text"
-                    value="30"
+                    value=""
                   />
                   <div
                     className="TextField-adornment"
@@ -541,7 +541,7 @@ comment is toxic, according to Perspective API. By default the threshold is set 
                     placeholder="80"
                     spellCheck={false}
                     type="text"
-                    value="80"
+                    value=""
                   />
                   <div
                     className="TextField-adornment"
@@ -622,29 +622,7 @@ improve the API over time.
                         checked={false}
                         className="RadioButton-input"
                         disabled={false}
-                        id="integrations.perspective.doNotStore-allow"
-                        name="integrations.perspective.doNotStore"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        type="radio"
-                        value={false}
-                      />
-                      <label
-                        className="RadioButton-label"
-                        htmlFor="integrations.perspective.doNotStore-allow"
-                      >
-                        Allow
-                      </label>
-                    </div>
-                    <div
-                      className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
-                    >
-                      <input
-                        checked={false}
-                        className="RadioButton-input"
-                        disabled={false}
-                        id="integrations.perspective.doNotStore-dontAllow"
+                        id="integrations.perspective.doNotStore-true"
                         name="integrations.perspective.doNotStore"
                         onBlur={[Function]}
                         onChange={[Function]}
@@ -654,9 +632,35 @@ improve the API over time.
                       />
                       <label
                         className="RadioButton-label"
-                        htmlFor="integrations.perspective.doNotStore-dontAllow"
+                        htmlFor="integrations.perspective.doNotStore-true"
                       >
-                        Don't allow
+                        <span>
+                          Allow
+                        </span>
+                      </label>
+                    </div>
+                    <div
+                      className="Box-root Flex-root RadioButton-root Flex-flex Flex-alignCenter"
+                    >
+                      <input
+                        checked={true}
+                        className="RadioButton-input"
+                        disabled={false}
+                        id="integrations.perspective.doNotStore-false"
+                        name="integrations.perspective.doNotStore"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="radio"
+                        value={false}
+                      />
+                      <label
+                        className="RadioButton-label"
+                        htmlFor="integrations.perspective.doNotStore-false"
+                      >
+                        <span>
+                          Missing translation "configure-permissionField-dontallow"
+                        </span>
                       </label>
                     </div>
                   </div>
@@ -711,7 +715,6 @@ improve the API over time.
                       onFocus={[Function]}
                       placeholder=""
                       spellCheck={false}
-                      type="password"
                       value=""
                     />
                     <div
@@ -897,7 +900,6 @@ in your Akismet account:
                       onFocus={[Function]}
                       placeholder=""
                       spellCheck={false}
-                      type="password"
                       value=""
                     />
                     <div

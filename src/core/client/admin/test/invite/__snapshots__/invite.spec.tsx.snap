@@ -198,7 +198,6 @@ exports[`renders form 1`] = `
                   onFocus={[Function]}
                   placeholder="Password"
                   spellCheck={false}
-                  type="password"
                   value=""
                 />
                 <div
