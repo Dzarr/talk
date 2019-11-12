@@ -5457,11 +5457,6 @@ Settings stores the global settings for a given Tenant.
 """
 type Settings {
   """
-  id is a canonical identifier for this Tenant.
-  """
-  id: ID!
-
-  """
   domain is the domain that is associated with this Tenant.
   """
   domain: String! @auth(roles: [ADMIN])
@@ -5581,6 +5576,8 @@ type Settings {
   createdAt is the time that the Settings was created at.
   """
   createdAt: Time! @auth(roles: [ADMIN])
+
+  organization: LegacyOrganization!
 }
 
 """
@@ -5800,6 +5797,12 @@ input UpdateStoryEntitySettingsInput {
   clientMutationId: String!
 }
 
+type LegacyOrganization {
+  name: String!
+  contactEmail: String!
+  url: String!
+}
+
 type Organization {
   id: ID!
   name: String!
@@ -5809,6 +5812,7 @@ type Organization {
   domain: String! @auth(roles: [ADMIN])
   allowedDomains: [String!]! @auth(roles: [ADMIN])
   multiSite: Boolean!
+  settings: EntitySettings!
   communities: [Community!]!
 }
 
