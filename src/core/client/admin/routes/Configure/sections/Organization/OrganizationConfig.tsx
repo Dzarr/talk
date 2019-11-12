@@ -9,31 +9,35 @@ import OrganizationURLConfigContainer from "./OrganizationURLConfigContainer";
 
 interface Props {
   disabled: boolean;
-  settings: PropTypesOf<typeof OrganizationNameConfigContainer>["settings"] &
-    PropTypesOf<typeof OrganizationContactEmailConfigContainer>["settings"] &
-    PropTypesOf<typeof OrganizationURLConfigContainer>["settings"];
+  organization: PropTypesOf<
+    typeof OrganizationNameConfigContainer
+  >["organization"] &
+    PropTypesOf<
+      typeof OrganizationContactEmailConfigContainer
+    >["organization"] &
+    PropTypesOf<typeof OrganizationURLConfigContainer>["organization"];
   onInitValues: (values: any) => void;
 }
 
 const OrganizationConfig: FunctionComponent<Props> = ({
   disabled,
-  settings,
+  organization,
   onInitValues,
 }) => (
   <HorizontalGutter size="double" data-testid="configure-organizationContainer">
     <OrganizationNameConfigContainer
       disabled={disabled}
-      settings={settings}
+      organization={organization}
       onInitValues={onInitValues}
     />
     <OrganizationContactEmailConfigContainer
       disabled={disabled}
-      settings={settings}
+      organization={organization}
       onInitValues={onInitValues}
     />
     <OrganizationURLConfigContainer
       disabled={disabled}
-      settings={settings}
+      organization={organization}
       onInitValues={onInitValues}
     />
   </HorizontalGutter>

@@ -47,7 +47,7 @@ const OrganizationNameConfig: FunctionComponent<Props> = ({ disabled }) => (
           </Typography>
         </Localized>
         <Field
-          name="organization.contactEmail"
+          name="contactEmail"
           validate={composeValidators(required, validateEmail)}
         >
           {({ input, meta }) => (

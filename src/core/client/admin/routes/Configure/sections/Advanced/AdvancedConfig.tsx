@@ -12,17 +12,20 @@ import StoryCreationConfigContainer from "./StoryCreationConfigContainer";
 interface Props {
   disabled: boolean;
   settings: PropTypesOf<typeof CustomCSSConfigContainer>["settings"] &
-    PropTypesOf<typeof PermittedDomainsConfigContainer>["settings"] &
     PropTypesOf<typeof CommentStreamLiveUpdatesContainer>["settings"] &
     PropTypesOf<typeof CommentStreamLiveUpdatesContainer>["settingsReadOnly"] &
     PropTypesOf<typeof EmbedCodeContainer>["settings"] &
     PropTypesOf<typeof StoryCreationConfigContainer>["settings"];
+  organization: PropTypesOf<
+    typeof PermittedDomainsConfigContainer
+  >["organization"];
   onInitValues: (values: any) => void;
 }
 
 const AdvancedConfig: FunctionComponent<Props> = ({
   disabled,
   settings,
+  organization,
   onInitValues,
 }) => (
   <HorizontalGutter size="double" data-testid="configure-advancedContainer">
@@ -40,7 +43,7 @@ const AdvancedConfig: FunctionComponent<Props> = ({
     />
     <PermittedDomainsConfigContainer
       disabled={disabled}
-      settings={settings}
+      organization={organization}
       onInitValues={onInitValues}
     />
     <StoryCreationConfigContainer

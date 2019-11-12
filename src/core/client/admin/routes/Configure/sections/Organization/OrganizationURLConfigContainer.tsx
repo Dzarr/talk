@@ -3,20 +3,20 @@ import { graphql } from "react-relay";
 
 import { withFragmentContainer } from "coral-framework/lib/relay";
 
-import { OrganizationURLConfigContainer_settings as SettingsData } from "coral-admin/__generated__/OrganizationURLConfigContainer_settings.graphql";
+import { OrganizationURLConfigContainer_organization as OrganizationData } from "coral-admin/__generated__/OrganizationURLConfigContainer_organization.graphql";
 
 import OrganizationURLConfig from "./OrganizationURLConfig";
 
 interface Props {
-  settings: SettingsData;
-  onInitValues: (values: SettingsData) => void;
+  organization: OrganizationData;
+  onInitValues: (values: OrganizationData) => void;
   disabled: boolean;
 }
 
 class OrganizationURLConfigContainer extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-    props.onInitValues(props.settings);
+    props.onInitValues(props.organization);
   }
 
   public render() {
@@ -26,8 +26,8 @@ class OrganizationURLConfigContainer extends React.Component<Props> {
 }
 
 const enhanced = withFragmentContainer<Props>({
-  settings: graphql`
-    fragment OrganizationURLConfigContainer_settings on Settings {
+  organization: graphql`
+    fragment OrganizationURLConfigContainer_organization on Organization {
       url
     }
   `,

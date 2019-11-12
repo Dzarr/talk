@@ -3,20 +3,20 @@ import { graphql } from "react-relay";
 
 import { withFragmentContainer } from "coral-framework/lib/relay";
 
-import { OrganizationContactEmailConfigContainer_settings as SettingsData } from "coral-admin/__generated__/OrganizationContactEmailConfigContainer_settings.graphql";
+import { OrganizationContactEmailConfigContainer_organization as OrganizationData } from "coral-admin/__generated__/OrganizationContactEmailConfigContainer_organization.graphql";
 
 import OrganizationContactEmailConfig from "./OrganizationContactEmailConfig";
 
 interface Props {
-  settings: SettingsData;
-  onInitValues: (values: SettingsData) => void;
+  onInitValues: (values: OrganizationData) => void;
   disabled: boolean;
+  organization: OrganizationData;
 }
 
 class OrganizationContactEmailConfigContainer extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-    props.onInitValues(props.settings);
+    props.onInitValues(props.organization);
   }
 
   public render() {
@@ -26,11 +26,9 @@ class OrganizationContactEmailConfigContainer extends React.Component<Props> {
 }
 
 const enhanced = withFragmentContainer<Props>({
-  settings: graphql`
-    fragment OrganizationContactEmailConfigContainer_settings on Settings {
-      organization {
-        contactEmail
-      }
+  organization: graphql`
+    fragment OrganizationContactEmailConfigContainer_organization on Organization {
+      contactEmail
     }
   `,
 })(OrganizationContactEmailConfigContainer);

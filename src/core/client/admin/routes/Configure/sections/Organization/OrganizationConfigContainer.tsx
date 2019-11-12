@@ -6,14 +6,14 @@ import { graphql } from "react-relay";
 import { pureMerge } from "coral-common/utils";
 import { withFragmentContainer } from "coral-framework/lib/relay";
 
-import { OrganizationConfigContainer_settings as SettingsData } from "coral-admin/__generated__/OrganizationConfigContainer_settings.graphql";
+import { OrganizationConfigContainer_organization as OrganizationData } from "coral-admin/__generated__/OrganizationConfigContainer_organization.graphql";
 
 import OrganizationConfig from "./OrganizationConfig";
 
 interface Props {
   form: FormApi;
   submitting: boolean;
-  settings: SettingsData;
+  organization: OrganizationData;
 }
 
 class OrganizationConfigContainer extends React.Component<Props> {
@@ -36,7 +36,7 @@ class OrganizationConfigContainer extends React.Component<Props> {
     return (
       <OrganizationConfig
         disabled={this.props.submitting}
-        settings={this.props.settings}
+        organization={this.props.organization}
         onInitValues={this.handleOnInitValues}
       />
     );
@@ -44,11 +44,11 @@ class OrganizationConfigContainer extends React.Component<Props> {
 }
 
 const enhanced = withFragmentContainer<Props>({
-  settings: graphql`
-    fragment OrganizationConfigContainer_settings on Settings {
-      ...OrganizationNameConfigContainer_settings
-      ...OrganizationContactEmailConfigContainer_settings
-      ...OrganizationURLConfigContainer_settings
+  organization: graphql`
+    fragment OrganizationConfigContainer_organization on Organization {
+      ...OrganizationNameConfigContainer_organization
+      ...OrganizationURLConfigContainer_organization
+      ...OrganizationContactEmailConfigContainer_organization
     }
   `,
 })(OrganizationConfigContainer);

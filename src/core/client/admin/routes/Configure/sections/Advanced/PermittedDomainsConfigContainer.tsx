@@ -3,20 +3,20 @@ import { graphql } from "react-relay";
 
 import { withFragmentContainer } from "coral-framework/lib/relay";
 
-import { PermittedDomainsConfigContainer_settings as SettingsData } from "coral-admin/__generated__/PermittedDomainsConfigContainer_settings.graphql";
+import { PermittedDomainsConfigContainer_organization as OrganizationData } from "coral-admin/__generated__/PermittedDomainsConfigContainer_organization.graphql";
 
 import PermittedDomainsConfig from "./PermittedDomainsConfig";
 
 interface Props {
-  settings: SettingsData;
-  onInitValues: (values: SettingsData) => void;
+  organization: OrganizationData;
+  onInitValues: (values: OrganizationData) => void;
   disabled: boolean;
 }
 
 class PermittedDomainsConfigContainer extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-    props.onInitValues(props.settings);
+    props.onInitValues(props.organization);
   }
 
   public render() {
@@ -26,8 +26,8 @@ class PermittedDomainsConfigContainer extends React.Component<Props> {
 }
 
 const enhanced = withFragmentContainer<Props>({
-  settings: graphql`
-    fragment PermittedDomainsConfigContainer_settings on Settings {
+  organization: graphql`
+    fragment PermittedDomainsConfigContainer_organization on Organization {
       allowedDomains
     }
   `,

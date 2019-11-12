@@ -41,10 +41,7 @@ const OrganizationURLConfig: FunctionComponent<Props> = ({ disabled }) => (
         >
           <Typography variant="bodyShort">This URL will be used</Typography>
         </Localized>
-        <Field
-          name="organization.url"
-          validate={composeValidators(required, validateURL)}
-        >
+        <Field name="url" validate={composeValidators(required, validateURL)}>
           {({ input, meta }) => (
             <>
               <TextField

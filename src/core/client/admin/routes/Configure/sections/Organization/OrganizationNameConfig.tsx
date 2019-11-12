@@ -40,7 +40,7 @@ const OrganizationNameConfig: FunctionComponent<Props> = ({ disabled }) => (
             community and organization members
           </Typography>
         </Localized>
-        <Field name="organization.name" validate={required}>
+        <Field name="name" validate={required}>
           {({ input, meta }) => (
             <>
               <TextField
