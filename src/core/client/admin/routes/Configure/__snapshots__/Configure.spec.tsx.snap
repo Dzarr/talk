@@ -5,6 +5,29 @@ exports[`renders correctly 1`] = `
   data-testid="configure-container"
 >
   <ReactFinalForm
+    form={
+      Object {
+        "batch": [Function],
+        "blur": [Function],
+        "change": [Function],
+        "destroyOnUnregister": false,
+        "focus": [Function],
+        "getFieldState": [Function],
+        "getRegisteredFields": [Function],
+        "getState": [Function],
+        "initialize": [Function],
+        "isValidationPaused": [Function],
+        "mutators": Object {},
+        "pauseValidation": [Function],
+        "registerField": [Function],
+        "reset": [Function],
+        "resetFieldState": [Function],
+        "resumeValidation": [Function],
+        "setConfig": [Function],
+        "submit": [Function],
+        "subscribe": [Function],
+      }
+    }
     onSubmit={[Function]}
   >
     [Function]

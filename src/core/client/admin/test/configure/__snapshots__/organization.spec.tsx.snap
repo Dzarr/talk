@@ -155,7 +155,7 @@ exports[`renders configure organization 1`] = `
                     placeholder=""
                     spellCheck={false}
                     type="text"
-                    value=""
+                    value="Coral"
                   />
                 </div>
               </div>
@@ -201,7 +201,7 @@ moderation questions.
                     placeholder=""
                     spellCheck={false}
                     type="text"
-                    value=""
+                    value="coral@test.com"
                   />
                 </div>
               </div>
@@ -244,7 +244,7 @@ moderation questions.
                     placeholder=""
                     spellCheck={false}
                     type="text"
-                    value=""
+                    value="https://test.com/"
                   />
                 </div>
               </div>

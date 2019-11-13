@@ -342,7 +342,7 @@ https://domain.com).
                     placeholder=""
                     spellCheck={false}
                     type="text"
-                    value=""
+                    value="http://localhost:8080"
                   />
                 </div>
               </div>

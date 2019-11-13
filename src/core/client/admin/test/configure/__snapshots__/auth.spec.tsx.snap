@@ -211,7 +211,7 @@ For more information visit:
             className="CheckBox-root"
           >
             <input
-              checked={false}
+              checked={true}
               className="CheckBox-input"
               disabled={false}
               id="auth.integrations.facebook.targetFilter.admin"
@@ -220,7 +220,7 @@ For more information visit:
               onChange={[Function]}
               onFocus={[Function]}
               type="checkbox"
-              value=""
+              value={true}
             />
             <label
               className="CheckBox-label"
@@ -237,7 +237,7 @@ For more information visit:
             className="CheckBox-root"
           >
             <input
-              checked={false}
+              checked={true}
               className="CheckBox-input"
               disabled={false}
               id="auth.integrations.facebook.targetFilter.stream"
@@ -246,7 +246,7 @@ For more information visit:
               onChange={[Function]}
               onFocus={[Function]}
               type="checkbox"
-              value=""
+              value={true}
             />
             <label
               className="CheckBox-label"
@@ -282,7 +282,7 @@ integration to register for a new account.
             className="CheckBox-root"
           >
             <input
-              checked={false}
+              checked={true}
               className="CheckBox-input"
               disabled={false}
               id="auth.integrations.facebook.allowRegistration"
@@ -291,7 +291,7 @@ integration to register for a new account.
               onChange={[Function]}
               onFocus={[Function]}
               type="checkbox"
-              value=""
+              value={true}
             />
             <label
               className="CheckBox-label"
@@ -1886,7 +1886,7 @@ address from the site and the database.
                       placeholder=""
                       spellCheck={false}
                       type="text"
-                      value=""
+                      value="90"
                     />
                   </div>
                   <span
@@ -1900,7 +1900,7 @@ address from the site and the database.
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
-                      value="3600"
+                      value="86400"
                     >
                       <option
                         value="3600"
@@ -1955,7 +1955,7 @@ address from the site and the database.
                         className="CheckBox-root"
                       >
                         <input
-                          checked={false}
+                          checked={true}
                           className="CheckBox-input"
                           disabled={false}
                           id="auth.integrations.local.enabled"
@@ -1964,7 +1964,7 @@ address from the site and the database.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value=""
+                          value={true}
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -2003,16 +2003,16 @@ address from the site and the database.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
-                            disabled={true}
+                            disabled={false}
                             id="auth.integrations.local.targetFilter.admin"
                             name="auth.integrations.local.targetFilter.admin"
                             onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -2029,16 +2029,16 @@ address from the site and the database.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
-                            disabled={true}
+                            disabled={false}
                             id="auth.integrations.local.targetFilter.stream"
                             name="auth.integrations.local.targetFilter.stream"
                             onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -2074,16 +2074,16 @@ integration to register for a new account.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
-                            disabled={true}
+                            disabled={false}
                             id="auth.integrations.local.allowRegistration"
                             name="auth.integrations.local.allowRegistration"
                             onBlur={[Function]}
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -2130,7 +2130,7 @@ integration to register for a new account.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value=""
+                          value={false}
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -2480,7 +2480,7 @@ the remaining fields. You may also enter the information manually.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.oidc.targetFilter.admin"
@@ -2489,7 +2489,7 @@ the remaining fields. You may also enter the information manually.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -2506,7 +2506,7 @@ the remaining fields. You may also enter the information manually.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.oidc.targetFilter.stream"
@@ -2515,7 +2515,7 @@ the remaining fields. You may also enter the information manually.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -2560,7 +2560,7 @@ integration to register for a new account.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={false}
                           />
                           <label
                             className="CheckBox-label"
@@ -2606,7 +2606,7 @@ integration to register for a new account.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value=""
+                          value={false}
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -2731,7 +2731,7 @@ and all signed-in users will be signed out.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.sso.targetFilter.admin"
@@ -2740,7 +2740,7 @@ and all signed-in users will be signed out.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -2757,7 +2757,7 @@ and all signed-in users will be signed out.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.sso.targetFilter.stream"
@@ -2766,7 +2766,7 @@ and all signed-in users will be signed out.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -2802,7 +2802,7 @@ integration to register for a new account.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.sso.allowRegistration"
@@ -2811,7 +2811,7 @@ integration to register for a new account.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -2857,7 +2857,7 @@ integration to register for a new account.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value=""
+                          value={false}
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -3038,7 +3038,7 @@ to create and set up a web application. For more information visit:
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.google.targetFilter.admin"
@@ -3047,7 +3047,7 @@ to create and set up a web application. For more information visit:
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -3064,7 +3064,7 @@ to create and set up a web application. For more information visit:
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.google.targetFilter.stream"
@@ -3073,7 +3073,7 @@ to create and set up a web application. For more information visit:
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -3109,7 +3109,7 @@ integration to register for a new account.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.google.allowRegistration"
@@ -3118,7 +3118,7 @@ integration to register for a new account.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -3165,7 +3165,7 @@ integration to register for a new account.
                           onChange={[Function]}
                           onFocus={[Function]}
                           type="checkbox"
-                          value=""
+                          value={false}
                         />
                         <label
                           className="CheckBox-label CheckBox-labelLight"
@@ -3346,7 +3346,7 @@ For more information visit:
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.facebook.targetFilter.admin"
@@ -3355,7 +3355,7 @@ For more information visit:
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -3372,7 +3372,7 @@ For more information visit:
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.facebook.targetFilter.stream"
@@ -3381,7 +3381,7 @@ For more information visit:
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"
@@ -3417,7 +3417,7 @@ integration to register for a new account.
                           className="CheckBox-root"
                         >
                           <input
-                            checked={false}
+                            checked={true}
                             className="CheckBox-input"
                             disabled={true}
                             id="auth.integrations.facebook.allowRegistration"
@@ -3426,7 +3426,7 @@ integration to register for a new account.
                             onChange={[Function]}
                             onFocus={[Function]}
                             type="checkbox"
-                            value=""
+                            value={true}
                           />
                           <label
                             className="CheckBox-label"

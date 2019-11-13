@@ -149,7 +149,7 @@ exports[`renders configure general 1`] = `
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
-                    value=""
+                    value="en-US"
                   >
                     <option
                       value="en-US"
@@ -299,7 +299,7 @@ reactions, be reported, and be shared.
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
-                  value=""
+                  value="Comments are closed on this story."
                 />
               </div>
             </div>
@@ -517,7 +517,7 @@ Blank spaces at the beginning and the end of a comment will be trimmed.
                     placeholder="No limit"
                     spellCheck={false}
                     type="text"
-                    value=""
+                    value={3}
                   />
                   <div
                     className="TextField-adornment"
@@ -556,7 +556,7 @@ Blank spaces at the beginning and the end of a comment will be trimmed.
                     placeholder="No limit"
                     spellCheck={false}
                     type="text"
-                    value=""
+                    value={1000}
                   />
                   <div
                     className="TextField-adornment"
@@ -615,7 +615,7 @@ moderation panel.
                       placeholder=""
                       spellCheck={false}
                       type="text"
-                      value=""
+                      value="500"
                     />
                   </div>
                   <span
@@ -629,7 +629,7 @@ moderation panel.
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
-                      value="1"
+                      value="60"
                     >
                       <option
                         value="1"
@@ -764,7 +764,7 @@ moderation panel.
                       placeholder=""
                       spellCheck={false}
                       type="text"
-                      value=""
+                      value="1"
                     />
                   </div>
                   <span
@@ -778,22 +778,22 @@ moderation panel.
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
-                      value="3600"
+                      value="604800"
                     >
                       <option
                         value="3600"
                       >
-                        Hours
+                        Hour
                       </option>
                       <option
                         value="86400"
                       >
-                        Days
+                        Day
                       </option>
                       <option
                         value="604800"
                       >
-                        Weeks
+                        Week
                       </option>
                     </select>
                     <span
@@ -838,7 +838,7 @@ moderation panel.
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
-                  value=""
+                  value="Comments are closed on this story."
                 />
               </div>
             </div>
@@ -891,7 +891,7 @@ each other's comments.
                           onFocus={[Function]}
                           placeholder="E.g. Respect"
                           type="text"
-                          value=""
+                          value="Reaction"
                         />
                       </div>
                     </div>
@@ -917,7 +917,7 @@ each other's comments.
                         type="button"
                       >
                         <span>
-                          
+                          Reaction
                         </span>
                       </button>
                     </div>
@@ -950,7 +950,7 @@ each other's comments.
                           onFocus={[Function]}
                           placeholder="E.g. Respected"
                           type="text"
-                          value=""
+                          value="reacted"
                         />
                       </div>
                     </div>
@@ -976,7 +976,7 @@ each other's comments.
                         type="button"
                       >
                         <span>
-                          
+                          reacted
                         </span>
                       </button>
                     </div>
@@ -1009,7 +1009,7 @@ each other's comments.
                           onFocus={[Function]}
                           placeholder="E.g. Most respected"
                           type="text"
-                          value=""
+                          value="Reactions"
                         />
                       </div>
                     </div>
@@ -1038,9 +1038,9 @@ each other's comments.
                             onFocus={[Function]}
                           >
                             <option
-                              value=""
+                              value="Reactions"
                             >
-                              
+                              Reactions
                             </option>
                              
                           </select>
@@ -1110,7 +1110,7 @@ appears on the comment stream and in the admin interface.
                           onFocus={[Function]}
                           placeholder="E.g. Staff"
                           type="text"
-                          value=""
+                          value="Staff"
                         />
                       </div>
                     </div>
@@ -1122,7 +1122,11 @@ appears on the comment stream and in the admin interface.
                       >
                         Preview
                       </h1>
-                      
+                      <span
+                        className="Tag-root Tag-colorGrey Tag-uppercase"
+                      >
+                        Staff
+                      </span>
                     </div>
                   </div>
                 </div>

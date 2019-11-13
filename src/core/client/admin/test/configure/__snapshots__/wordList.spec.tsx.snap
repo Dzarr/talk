@@ -165,7 +165,7 @@ exports[`renders configure wordList 1`] = `
                     onChange={[Function]}
                     onFocus={[Function]}
                     spellCheck={false}
-                    value=""
+                    value="fuck"
                   />
                 </div>
               </div>
@@ -219,7 +219,8 @@ published (if comments are not pre-moderated).
                     onChange={[Function]}
                     onFocus={[Function]}
                     spellCheck={false}
-                    value=""
+                    value="idiot
+stupid"
                   />
                 </div>
               </div>
