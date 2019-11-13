@@ -16,7 +16,7 @@ import {
 } from "coral-stream/mutations";
 import { Popup } from "coral-ui/components";
 
-import { UserBoxContainer_settings as SettingsData } from "coral-stream/__generated__/UserBoxContainer_settings.graphql";
+import { UserBoxContainer_organization as OrgData } from "coral-stream/__generated__/UserBoxContainer_organization.graphql";
 import { UserBoxContainer_viewer as ViewerData } from "coral-stream/__generated__/UserBoxContainer_viewer.graphql";
 import { UserBoxContainerLocal as Local } from "coral-stream/__generated__/UserBoxContainerLocal.graphql";
 
@@ -30,7 +30,7 @@ import UserBoxUnauthenticated from "./UserBoxUnauthenticated";
 interface Props {
   local: Local;
   viewer: ViewerData | null;
-  settings: SettingsData;
+  organization: OrgData;
   showAuthPopup: ShowAuthPopupMutation;
   setAuthPopupState: SetAuthPopupStateMutation;
   signOut: SignOutMutation;
@@ -53,7 +53,7 @@ export class UserBoxContainer extends Component<Props> {
   }
 
   private get supportsRegister() {
-    const integrations = this.props.settings.auth.integrations;
+    const integrations = this.props.organization.settings.auth.integrations;
     return [
       integrations.facebook,
       integrations.google,
@@ -63,7 +63,7 @@ export class UserBoxContainer extends Component<Props> {
   }
 
   private get weControlAuth() {
-    const integrations = this.props.settings.auth.integrations;
+    const integrations = this.props.organization.settings.auth.integrations;
     return [
       integrations.facebook,
       integrations.google,
@@ -141,36 +141,38 @@ const enhanced = withSignOutMutation(
               username
             }
           `,
-          settings: graphql`
-            fragment UserBoxContainer_settings on Settings {
-              auth {
-                integrations {
-                  local {
-                    enabled
-                    allowRegistration
-                    targetFilter {
-                      stream
+          organization: graphql`
+            fragment UserBoxContainer_organization on Organization {
+              settings {
+                auth {
+                  integrations {
+                    local {
+                      enabled
+                      allowRegistration
+                      targetFilter {
+                        stream
+                      }
                     }
-                  }
-                  oidc {
-                    enabled
-                    allowRegistration
-                    targetFilter {
-                      stream
+                    oidc {
+                      enabled
+                      allowRegistration
+                      targetFilter {
+                        stream
+                      }
                     }
-                  }
-                  google {
-                    enabled
-                    allowRegistration
-                    targetFilter {
-                      stream
+                    google {
+                      enabled
+                      allowRegistration
+                      targetFilter {
+                        stream
+                      }
                     }
-                  }
-                  facebook {
-                    enabled
-                    allowRegistration
-                    targetFilter {
-                      stream
+                    facebook {
+                      enabled
+                      allowRegistration
+                      targetFilter {
+                        stream
+                      }
                     }
                   }
                 }
