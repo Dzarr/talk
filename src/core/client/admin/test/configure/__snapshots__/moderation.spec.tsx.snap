@@ -443,7 +443,7 @@ Comments with a toxicity score above the threshold
                   will not be published
                 </strong>
                  and are placed in
-the 
+the
                 <strong>
                   Pending Queue for review by a moderator
                 </strong>
@@ -567,7 +567,7 @@ comment is toxic, according to Perspective API. By default the threshold is set 
                   className="Box-root Typography-root Typography-fieldDescription Typography-colorTextSecondary"
                 >
                   Choose your Perspective Model. The default is TOXICITY.
-You can find out more about model choices 
+You can find out more about model choices
                   <a
                     className="ExternalLink-root"
                     href="https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md#models"
@@ -659,7 +659,7 @@ improve the API over time.
                         htmlFor="integrations.perspective.doNotStore-false"
                       >
                         <span>
-                          Missing translation "configure-permissionField-dontallow"
+                          Missing translation "configure-radioButton-dontAllow"
                         </span>
                       </label>
                     </div>
@@ -861,7 +861,7 @@ If approved by a moderator, the comment will be published.
                   className="Box-root Typography-root Typography-fieldDescription Typography-colorTextPrimary"
                 >
                   Note: You must add your active domain(s)
-in your Akismet account: 
+in your Akismet account:
                   <a
                     className="ExternalLink-root"
                     href="https://akismet.com/account/"

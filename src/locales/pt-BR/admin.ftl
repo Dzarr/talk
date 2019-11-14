@@ -83,8 +83,8 @@ configure-sideBar-saveChanges = Salvar mudanças
 configure-configurationSubHeader = Configuração
 configure-onOffField-on = Ligado
 configure-onOffField-off = Desligado
-configure-permissionField-allow = Permitir
-configure-permissionField-dontAllow = Não permitir
+configure-radioButton-allow = Permitir
+configure-radioButton-dontAllow = Não permitir
 
 ### General
 configure-general-guidelines-title = Resumo das Diretrizes da Comunidade
@@ -807,7 +807,7 @@ configure-advanced-stories-scraping-detail = Permita que os metadados da histór
 configure-advanced-stories-proxy = Url do proxy do Scraper
 configure-advanced-stories-proxy-detail =
    Quando especificado, permite que requisições do scraper utilizem o
-   proxy. Todos os pedidos serão passados através do proxy conforme analisado 
+   proxy. Todos os pedidos serão passados através do proxy conforme analisado
   pelo pacote <externalLink>npm proxy-agent</externalLink>.
 
 forgotPassword-forgotPasswordHeader = Esqueceu a senha?

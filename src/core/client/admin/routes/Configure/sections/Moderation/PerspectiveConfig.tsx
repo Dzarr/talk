@@ -201,12 +201,12 @@ const PerspectiveConfig: FunctionComponent<Props> = ({ disabled }) => {
               name="integrations.perspective.doNotStore"
               disabled={disabled}
               onLabel={
-                <Localized id="configure-permissionField-allow">
+                <Localized id="configure-radioButton-allow">
                   <span>Allow</span>
                 </Localized>
               }
               offLabel={
-                <Localized id="configure-permissionField-dontallow">
+                <Localized id="configure-radioButton-dontAllow">
                   <span>Don't Allow</span>
                 </Localized>
               }
