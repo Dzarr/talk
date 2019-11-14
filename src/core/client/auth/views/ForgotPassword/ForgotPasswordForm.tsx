@@ -123,12 +123,12 @@ const ForgotPasswordForm: FunctionComponent<Props> = ({
                         attrs={{ placeholder: true }}
                       >
                         <TextField
+                          {...input}
                           id={input.name}
                           placeholder="Email Address"
                           color={colorFromMeta(meta)}
                           disabled={submitting}
                           fullWidth
-                          {...input}
                         />
                       </Localized>
                       <ValidationMessage meta={meta} fullWidth />

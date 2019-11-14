@@ -25,6 +25,7 @@ it("purges metadata", () => {
   const B = {
     a: {
       s: "t",
+      v: null,
     },
     b: {
       d: {

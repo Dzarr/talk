@@ -60,6 +60,13 @@ export const formatNewLineDelimitedString = (
   v: ReadonlyArray<string> | undefined | null
 ) => (v && v.join("\n")) || "";
 
+export const parseString = (v: string | undefined) => {
+  if (!v) {
+    return "";
+  }
+  return v;
+};
+
 export const parseStringList = (v: string) => {
   if (v === "") {
     return [];

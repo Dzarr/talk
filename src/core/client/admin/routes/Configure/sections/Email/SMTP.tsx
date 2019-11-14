@@ -67,11 +67,11 @@ const SMTP: FunctionComponent<Props> = ({ disabled }) => (
         {({ input, meta }) => (
           <>
             <TextField
+              {...input}
               id={input.name}
               fullWidth
               disabled={disabled}
               color={colorFromMeta(meta)}
-              {...input}
             />
             <ValidationMessage fullWidth meta={meta} />
           </>
@@ -92,12 +92,12 @@ const SMTP: FunctionComponent<Props> = ({ disabled }) => (
         {({ input, meta }) => (
           <>
             <TextField
+              {...input}
               id={input.name}
               type="number"
               fullWidth
               disabled={disabled}
               color={colorFromMeta(meta)}
-              {...input}
             />
             <ValidationMessage fullWidth meta={meta} />
           </>
@@ -142,11 +142,11 @@ const SMTP: FunctionComponent<Props> = ({ disabled }) => (
               {({ input, meta }) => (
                 <>
                   <TextField
+                    {...input}
                     id={input.name}
                     disabled={disabled || !enabled}
                     fullWidth
                     color={colorFromMeta(meta)}
-                    {...input}
                   />
                   <ValidationMessage fullWidth meta={meta} />
                 </>

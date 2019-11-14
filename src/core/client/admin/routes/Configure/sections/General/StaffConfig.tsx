@@ -57,13 +57,13 @@ const StaffConfig: FunctionComponent<Props> = ({ disabled }) => (
                   </Localized>
                   <Localized id="configure-general-staff-input">
                     <TextField
+                      {...input}
                       className={styles.textInput}
                       id={input.name}
                       type="text"
                       fullWidth
                       placeholder="E.g. Staff"
                       disabled={disabled}
-                      {...input}
                     />
                   </Localized>
                   <ValidationMessage fullWidth meta={meta} />

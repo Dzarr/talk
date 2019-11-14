@@ -103,11 +103,11 @@ class PermittedDomainsStep extends Component<Props> {
                       attrs={{ placeholder: true }}
                     >
                       <TextField
+                        {...input}
                         placeholder="Domains"
                         color={colorFromMeta(meta)}
                         disabled={submitting}
                         fullWidth
-                        {...input}
                       />
                     </Localized>
                     <ValidationMessage meta={meta} fullWidth />

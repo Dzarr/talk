@@ -123,6 +123,7 @@ const RecentCommentHistoryConfig: FunctionComponent<Props> = ({ disabled }) => {
             {({ input, meta }) => (
               <>
                 <TextField
+                  {...input}
                   classes={{
                     input: styles.thresholdTextField,
                   }}
@@ -133,7 +134,6 @@ const RecentCommentHistoryConfig: FunctionComponent<Props> = ({ disabled }) => {
                   spellCheck={false}
                   adornment={<Typography variant="bodyShort">%</Typography>}
                   textAlignCenter
-                  {...input}
                 />
                 <ValidationMessage meta={meta} />
               </>

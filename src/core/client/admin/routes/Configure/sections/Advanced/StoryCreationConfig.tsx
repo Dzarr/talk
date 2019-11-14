@@ -94,13 +94,13 @@ const StoryCreationConfig: FunctionComponent<Props> = ({ disabled }) => (
             {({ input, meta }) => (
               <>
                 <TextField
+                  {...input}
                   id="configure-advanced-stories-proxy-url"
                   disabled={disabled}
                   autoComplete="off"
                   autoCorrect="off"
                   autoCapitalize="off"
                   spellCheck={false}
-                  {...input}
                 />
                 <ValidationMessage meta={meta} />
               </>

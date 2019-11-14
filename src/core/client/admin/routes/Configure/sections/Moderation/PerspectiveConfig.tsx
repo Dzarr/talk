@@ -122,6 +122,7 @@ const PerspectiveConfig: FunctionComponent<Props> = ({ disabled }) => {
             {({ input, meta }) => (
               <>
                 <TextField
+                  {...input}
                   id="configure-moderation-perspective-threshold"
                   classes={{
                     input: styles.thresholdTextField,
@@ -134,7 +135,6 @@ const PerspectiveConfig: FunctionComponent<Props> = ({ disabled }) => {
                   adornment={<Typography variant="bodyShort">%</Typography>}
                   placeholder={TOXICITY_THRESHOLD_DEFAULT.toString()}
                   textAlignCenter
-                  {...input}
                 />
                 <ValidationMessage meta={meta} />
               </>
@@ -168,6 +168,7 @@ const PerspectiveConfig: FunctionComponent<Props> = ({ disabled }) => {
             {({ input, meta }) => (
               <>
                 <TextField
+                  {...input}
                   id="configure-moderation-perspective-model"
                   disabled={disabled}
                   autoComplete="off"
@@ -176,7 +177,6 @@ const PerspectiveConfig: FunctionComponent<Props> = ({ disabled }) => {
                   placeholder={TOXICITY_MODEL_DEFAULT}
                   spellCheck={false}
                   fullWidth
-                  {...input}
                 />
                 <ValidationMessage meta={meta} />
               </>
@@ -254,6 +254,7 @@ const PerspectiveConfig: FunctionComponent<Props> = ({ disabled }) => {
             {({ input, meta }) => (
               <>
                 <TextField
+                  {...input}
                   id="configure-moderation-perspective-customEndpoint"
                   disabled={disabled}
                   autoComplete="off"
@@ -262,7 +263,6 @@ const PerspectiveConfig: FunctionComponent<Props> = ({ disabled }) => {
                   placeholder={TOXICITY_ENDPOINT_DEFAULT}
                   spellCheck={false}
                   fullWidth
-                  {...input}
                 />
                 <ValidationMessage meta={meta} />
               </>

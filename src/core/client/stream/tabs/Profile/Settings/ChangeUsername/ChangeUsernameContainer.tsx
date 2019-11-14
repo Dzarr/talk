@@ -291,8 +291,8 @@ const ChangeUsernameContainer: FunctionComponent<Props> = ({
                             {({ input, meta }) => (
                               <>
                                 <TextField
-                                  fullWidth
                                   {...input}
+                                  fullWidth
                                   id="profile-changeUsername-username-confirm"
                                 />
                                 <FieldValidationMessage meta={meta} />

@@ -90,11 +90,11 @@ class AddOrganizationStep extends React.Component<Props> {
                       attrs={{ placeholder: true }}
                     >
                       <TextField
+                        {...input}
                         placeholder="Organization Name"
                         color={colorFromMeta(meta)}
                         disabled={submitting}
                         fullWidth
-                        {...input}
                       />
                     </Localized>
                     <ValidationMessage meta={meta} fullWidth />
@@ -116,6 +116,7 @@ class AddOrganizationStep extends React.Component<Props> {
                       attrs={{ placeholder: true }}
                     >
                       <TextField
+                        {...input}
                         placeholder="Organization Contact Email"
                         color={colorFromMeta(meta)}
                         disabled={submitting}
@@ -123,7 +124,6 @@ class AddOrganizationStep extends React.Component<Props> {
                         autoCapitalize="off"
                         autoCorrect="off"
                         fullWidth
-                        {...input}
                       />
                     </Localized>
                     <ValidationMessage meta={meta} fullWidth />
@@ -155,11 +155,11 @@ class AddOrganizationStep extends React.Component<Props> {
                       attrs={{ placeholder: true }}
                     >
                       <TextField
+                        {...input}
                         placeholder="Organization URL"
                         color={colorFromMeta(meta)}
                         disabled={submitting}
                         fullWidth
-                        {...input}
                       />
                     </Localized>
                     <ValidationMessage meta={meta} fullWidth />

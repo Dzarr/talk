@@ -55,6 +55,7 @@ const CustomCSSConfig: FunctionComponent<Props> = ({ disabled }) => (
           {({ input, meta }) => (
             <>
               <TextField
+                {...input}
                 id={`configure-advanced-${input.name}`}
                 disabled={disabled}
                 autoComplete="off"
@@ -62,7 +63,6 @@ const CustomCSSConfig: FunctionComponent<Props> = ({ disabled }) => (
                 autoCapitalize="off"
                 spellCheck={false}
                 fullWidth
-                {...input}
               />
               <ValidationMessage meta={meta} fullWidth />
             </>

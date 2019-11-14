@@ -62,6 +62,7 @@ const PermittedDomainsConfig: FunctionComponent<Props> = ({ disabled }) => (
           {({ input, meta }) => (
             <>
               <TextField
+                {...input}
                 id={`configure-advanced-${input.name}`}
                 disabled={disabled}
                 color={colorFromMeta(meta)}
@@ -69,7 +70,6 @@ const PermittedDomainsConfig: FunctionComponent<Props> = ({ disabled }) => (
                 autoCorrect="off"
                 autoCapitalize="off"
                 spellCheck={false}
-                {...input}
                 fullWidth
               />
               <ValidationMessage meta={meta} fullWidth />

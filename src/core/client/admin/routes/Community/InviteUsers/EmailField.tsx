@@ -31,11 +31,11 @@ const EmailField: FunctionComponent<Props> = ({ index, disabled }) => (
             </InputLabel>
           </Localized>
           <TextField
+            {...input}
             data-testid={`invite-users-email.${index}`}
             color={colorFromMeta(meta)}
             disabled={disabled}
             fullWidth
-            {...input}
           />
           <ValidationMessage meta={meta} fullWidth />
         </FormField>

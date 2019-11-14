@@ -80,7 +80,6 @@ const ConfirmPage: FunctionComponent<Props> = ({
       }
 
       setTimeout(form.reset);
-
       onProceed();
       return;
     },
@@ -156,13 +155,13 @@ const ConfirmPage: FunctionComponent<Props> = ({
                           </InputLabel>
                         </Localized>
                         <TextField
+                          {...input}
                           fullWidth
                           id={input.name}
                           data-testid="confirm-page-confirmation"
                           disabled={submitting}
                           color={colorFromMeta(meta)}
                           autoComplete="confirmation"
-                          {...input}
                         />
                         <FieldValidationMessage fullWidth meta={meta} />
                       </FormField>

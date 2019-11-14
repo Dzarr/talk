@@ -110,6 +110,7 @@ const AkismetConfig: FunctionComponent<Props> = ({ disabled }) => {
             {({ input, meta }) => (
               <>
                 <TextField
+                  {...input}
                   id="configure-moderation-akismet-site"
                   disabled={disabled}
                   autoComplete="off"
@@ -118,7 +119,6 @@ const AkismetConfig: FunctionComponent<Props> = ({ disabled }) => {
                   spellCheck={false}
                   color={colorFromMeta(meta)}
                   fullWidth
-                  {...input}
                 />
                 <ValidationMessage meta={meta} />
               </>

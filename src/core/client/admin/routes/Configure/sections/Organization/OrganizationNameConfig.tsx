@@ -54,6 +54,7 @@ const OrganizationNameConfig: FunctionComponent<Props> = ({ disabled }) => (
           {({ input, meta }) => (
             <>
               <TextField
+                {...input}
                 id={`configure-organization-${input.name}`}
                 disabled={disabled}
                 autoComplete="off"
@@ -61,7 +62,6 @@ const OrganizationNameConfig: FunctionComponent<Props> = ({ disabled }) => (
                 autoCapitalize="off"
                 spellCheck={false}
                 fullWidth
-                {...input}
               />
               <ValidationMessage meta={meta} fullWidth />
             </>

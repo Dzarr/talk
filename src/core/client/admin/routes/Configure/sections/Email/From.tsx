@@ -46,10 +46,10 @@ const From: FunctionComponent<Props> = ({ disabled }) => (
         {({ input, meta }) => (
           <>
             <TextField
+              {...input}
               fullWidth
               disabled={disabled}
               color={colorFromMeta(meta)}
-              {...input}
             />
             <ValidationMessage fullWidth meta={meta} />
           </>
@@ -73,11 +73,11 @@ const From: FunctionComponent<Props> = ({ disabled }) => (
         {({ input, meta }) => (
           <>
             <TextField
+              {...input}
               type="email"
               fullWidth
               color={colorFromMeta(meta)}
               disabled={disabled}
-              {...input}
             />
             <ValidationMessage fullWidth meta={meta} />
           </>

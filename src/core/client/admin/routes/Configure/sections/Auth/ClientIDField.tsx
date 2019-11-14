@@ -27,12 +27,12 @@ const ClientSecretField: FunctionComponent<Props> = ({
       {({ input, meta }) => (
         <>
           <TextField
+            {...input}
             disabled={disabled}
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
             color={colorFromMeta(meta)}
-            {...input}
             spellCheck={false}
             fullWidth
           />

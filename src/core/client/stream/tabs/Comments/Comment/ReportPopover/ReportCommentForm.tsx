@@ -24,22 +24,20 @@ const RadioField: FunctionComponent<
     FieldProps<string, any>,
     "validate" | "name" | "value" | "disabled" | "children"
   >
-> = ({ name, value, disabled, children }) => {
-  return (
-    <Field name={name} type="radio" value={value}>
-      {({ input }) => (
-        <RadioButton
-          id={`reportComment-popover--${input.name}-${value}`}
-          disabled={disabled}
-          value={value}
-          {...input}
-        >
-          {children}
-        </RadioButton>
-      )}
-    </Field>
-  );
-};
+> = ({ name, value, disabled, children }) => (
+  <Field name={name} type="radio" value={value}>
+    {({ input }) => (
+      <RadioButton
+        id={`reportComment-popover--${input.name}-${value}`}
+        disabled={disabled}
+        value={value}
+        {...input}
+      >
+        {children}
+      </RadioButton>
+    )}
+  </Field>
+);
 
 interface Props {
   id: string;

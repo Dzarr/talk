@@ -93,11 +93,11 @@ const CommentLengthConfig: FunctionComponent<Props> = ({ disabled }) => (
                 attrs={{ placeholder: true }}
               >
                 <TextField
+                  {...input}
                   id="configure-general-commentLength-min"
                   classes={{
                     input: styles.commentLengthTextInput,
                   }}
-                  {...input}
                   disabled={disabled}
                   autoComplete="off"
                   autoCorrect="off"
@@ -139,6 +139,7 @@ const CommentLengthConfig: FunctionComponent<Props> = ({ disabled }) => (
                 attrs={{ placeholder: true }}
               >
                 <TextField
+                  {...input}
                   id="configure-general-commentLength-max"
                   classes={{
                     input: styles.commentLengthTextInput,
@@ -155,7 +156,6 @@ const CommentLengthConfig: FunctionComponent<Props> = ({ disabled }) => (
                   }
                   placeholder={"No limit"}
                   textAlignCenter
-                  {...input}
                 />
               </Localized>
               <ValidationMessage meta={meta} />

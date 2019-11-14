@@ -86,6 +86,7 @@ class CreateYourAccountStep extends Component<Props> {
                       attrs={{ placeholder: true }}
                     >
                       <TextField
+                        {...input}
                         placeholder="Email"
                         color={colorFromMeta(meta)}
                         disabled={submitting}
@@ -93,7 +94,6 @@ class CreateYourAccountStep extends Component<Props> {
                         autoCapitalize="off"
                         autoCorrect="off"
                         fullWidth
-                        {...input}
                       />
                     </Localized>
                     <ValidationMessage meta={meta} fullWidth />
@@ -121,13 +121,12 @@ class CreateYourAccountStep extends Component<Props> {
                       attrs={{ placeholder: true }}
                     >
                       <TextField
+                        {...input}
                         placeholder="Username"
                         color={colorFromMeta(meta)}
                         disabled={submitting}
                         autoCapitalize="off"
                         autoCorrect="off"
-                        fullWidth
-                        {...input}
                       />
                     </Localized>
                     <ValidationMessage meta={meta} fullWidth />
@@ -154,12 +153,12 @@ class CreateYourAccountStep extends Component<Props> {
                       attrs={{ placeholder: true }}
                     >
                       <TextField
+                        {...input}
                         placeholder="Password"
                         type="password"
                         color={colorFromMeta(meta)}
                         disabled={submitting}
                         fullWidth
-                        {...input}
                       />
                     </Localized>
                     <ValidationMessage meta={meta} fullWidth />
@@ -181,12 +180,12 @@ class CreateYourAccountStep extends Component<Props> {
                       attrs={{ placeholder: true }}
                     >
                       <TextField
+                        {...input}
                         placeholder="Confirm Password"
                         type="password"
                         color={colorFromMeta(meta)}
                         disabled={submitting}
                         fullWidth
-                        {...input}
                       />
                     </Localized>
                     <ValidationMessage meta={meta} fullWidth />

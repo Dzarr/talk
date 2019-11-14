@@ -71,11 +71,11 @@ const UserTableFilter: FunctionComponent<Props> = props => (
                     attrs={{ placeholder: true, "aria-label": true }}
                   >
                     <TextField
+                      {...input}
                       className={styles.textField}
                       placeholder="Search by username or email address..."
                       aria-label="Search by username or email address"
                       variant="seamlessAdornment"
-                      {...input}
                       adornment={
                         <Localized
                           id="community-filter-searchButton"

@@ -58,6 +58,7 @@ const OrganizationURLConfig: FunctionComponent<Props> = ({ disabled }) => (
           {({ input, meta }) => (
             <>
               <TextField
+                {...input}
                 id={`configure-organization-${input.name}`}
                 disabled={disabled}
                 autoComplete="off"
@@ -65,7 +66,6 @@ const OrganizationURLConfig: FunctionComponent<Props> = ({ disabled }) => (
                 autoCapitalize="off"
                 spellCheck={false}
                 fullWidth
-                {...input}
               />
               <ValidationMessage fullWidth meta={meta} />
             </>

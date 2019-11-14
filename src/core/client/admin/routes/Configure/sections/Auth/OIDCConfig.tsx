@@ -118,6 +118,7 @@ const OIDCConfig: FunctionComponent<Props> = ({
               {({ input, meta }) => (
                 <>
                   <TextField
+                    {...input}
                     disabled={disabledInside}
                     autoComplete="off"
                     autoCorrect="off"
@@ -125,7 +126,6 @@ const OIDCConfig: FunctionComponent<Props> = ({
                     spellCheck={false}
                     color={colorFromMeta(meta)}
                     fullWidth
-                    {...input}
                   />
                   <ValidationMessage meta={meta} />
                 </>
@@ -162,6 +162,7 @@ const OIDCConfig: FunctionComponent<Props> = ({
                 <>
                   <Flex direction="row" itemGutter="half" alignItems="center">
                     <TextField
+                      {...input}
                       disabled={disabledInside || disableForDiscover}
                       autoComplete="off"
                       autoCorrect="off"
@@ -169,7 +170,6 @@ const OIDCConfig: FunctionComponent<Props> = ({
                       spellCheck={false}
                       color={colorFromMeta(meta)}
                       fullWidth
-                      {...input}
                     />
                     <Button
                       id="configure-auth-oidc-discover"
@@ -199,6 +199,7 @@ const OIDCConfig: FunctionComponent<Props> = ({
               {({ input, meta }) => (
                 <>
                   <TextField
+                    {...input}
                     disabled={disabledInside || disableForDiscover}
                     autoComplete="off"
                     autoCorrect="off"
@@ -206,7 +207,6 @@ const OIDCConfig: FunctionComponent<Props> = ({
                     spellCheck={false}
                     color={colorFromMeta(meta)}
                     fullWidth
-                    {...input}
                   />
                   <ValidationMessage meta={meta} />
                 </>
@@ -225,6 +225,7 @@ const OIDCConfig: FunctionComponent<Props> = ({
               {({ input, meta }) => (
                 <>
                   <TextField
+                    {...input}
                     disabled={disabledInside || disableForDiscover}
                     autoComplete="off"
                     autoCorrect="off"
@@ -232,7 +233,6 @@ const OIDCConfig: FunctionComponent<Props> = ({
                     spellCheck={false}
                     color={colorFromMeta(meta)}
                     fullWidth
-                    {...input}
                   />
                   <ValidationMessage meta={meta} />
                 </>
@@ -251,6 +251,7 @@ const OIDCConfig: FunctionComponent<Props> = ({
               {({ input, meta }) => (
                 <>
                   <TextField
+                    {...input}
                     disabled={disabledInside || disableForDiscover}
                     autoComplete="off"
                     autoCorrect="off"
@@ -258,7 +259,6 @@ const OIDCConfig: FunctionComponent<Props> = ({
                     spellCheck={false}
                     color={colorFromMeta(meta)}
                     fullWidth
-                    {...input}
                   />
                   <ValidationMessage meta={meta} />
                 </>

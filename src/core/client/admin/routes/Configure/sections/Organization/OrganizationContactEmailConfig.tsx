@@ -65,6 +65,7 @@ const OrganizationContactEmailConfig: FunctionComponent<Props> = ({
           {({ input, meta }) => (
             <>
               <TextField
+                {...input}
                 id={`configure-organization-${input.name}`}
                 disabled={disabled}
                 autoComplete="off"
@@ -72,7 +73,6 @@ const OrganizationContactEmailConfig: FunctionComponent<Props> = ({
                 autoCapitalize="off"
                 spellCheck={false}
                 fullWidth
-                {...input}
               />
               <ValidationMessage fullWidth meta={meta} />
             </>

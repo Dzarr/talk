@@ -74,13 +74,13 @@ const ReactionsConfig: FunctionComponent<Props> = ({
                   </Localized>
                   <Localized id="configure-general-reactions-input">
                     <TextField
+                      {...input}
                       className={styles.textInput}
                       id={input.name}
                       type="text"
                       fullWidth
                       placeholder="E.g. Respect"
                       disabled={disabled}
-                      {...input}
                     />
                   </Localized>
                   <ValidationMessage fullWidth meta={meta} />
@@ -115,13 +115,13 @@ const ReactionsConfig: FunctionComponent<Props> = ({
                   </Localized>
                   <Localized id="configure-general-reactions-active-input">
                     <TextField
+                      {...input}
                       className={styles.textInput}
                       id={input.name}
                       type="text"
                       placeholder="E.g. Respected"
                       fullWidth
                       disabled={disabled}
-                      {...input}
                     />
                   </Localized>
                   <ValidationMessage fullWidth meta={meta} />
@@ -156,13 +156,13 @@ const ReactionsConfig: FunctionComponent<Props> = ({
                   </Localized>
                   <Localized id="configure-general-reactions-sort-input">
                     <TextField
+                      {...input}
                       id={input.name}
                       className={styles.textInput}
                       type="text"
                       placeholder="E.g. Most respected"
                       fullWidth
                       disabled={disabled}
-                      {...input}
                     />
                   </Localized>
                   <ValidationMessage fullWidth meta={meta} />

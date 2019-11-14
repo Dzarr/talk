@@ -9,6 +9,7 @@ import {
   findParentWithType,
   waitForElement,
   within,
+  act,
 } from "coral-framework/testHelpers";
 
 import { commenters, settings, stories } from "../../fixtures";
@@ -71,15 +72,21 @@ it("validate min", async () => {
 
   const text = "Please enter at least 3 characters.";
 
-  rte.props.onChange({ html: "ab" });
-  form.props.onSubmit();
+  act(() => {
+    rte.props.onChange({ html: "ab" });
+    form.props.onSubmit();
+  });
   within(form).getByText(text);
 
   // Reset validation when erasing all content.
-  rte.props.onChange({ html: "" });
+  act(() => {
+    rte.props.onChange({ html: "" });
+  });
   expect(within(form).queryByText(text)).toBeNull();
 
-  rte.props.onChange({ html: "ab" });
+  act(() => {
+    rte.props.onChange({ html: "ab" });
+  });
   expect(within(form).queryByText(text)).toBeNull();
 });
 
