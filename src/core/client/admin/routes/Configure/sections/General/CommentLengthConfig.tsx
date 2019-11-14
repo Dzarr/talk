@@ -39,11 +39,7 @@ graphql`
 const validateMaxLongerThanMin = createValidator(
   (v: any, values: any) =>
     v === null ||
-    v === undefined ||
-    values.charCount === null ||
-    values.charCount === undefined ||
     values.charCount.min === null ||
-    values.charCount.min === undefined ||
     parseInt(v, 10) > parseInt(values.charCount.min, 10),
   // eslint-disable-next-line:jsx-wrap-multiline
   <Localized id="configure-general-commentLength-validateLongerThanMin">

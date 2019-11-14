@@ -49,12 +49,7 @@ const isEnabled: Condition<any, FormProps> = (value, values) =>
   Boolean(values.email && values.email.enabled);
 
 const isAuthenticating: Condition<any, FormProps> = (value, values) =>
-  Boolean(
-    values.email &&
-      values.email.enabled &&
-      values.email.smtp &&
-      values.email.smtp.authentication
-  );
+  Boolean(values.email.enabled && values.email.smtp.authentication);
 
 const SMTP: FunctionComponent<Props> = ({ disabled }) => (
   <HorizontalGutter size="oneAndAHalf" container={<FieldSet />}>

@@ -44,11 +44,7 @@ interface Props {
 }
 
 const isEnabled: Condition = (value, values) =>
-  Boolean(
-    values.integrations &&
-      values.integrations.akismet &&
-      values.integrations.akismet.enabled
-  );
+  Boolean(values.integrations.akismet.enabled);
 
 const AkismetConfig: FunctionComponent<Props> = ({ disabled }) => {
   return (

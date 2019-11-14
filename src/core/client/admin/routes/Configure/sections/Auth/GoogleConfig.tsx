@@ -48,12 +48,7 @@ const GoogleLink = () => (
 );
 
 const isEnabled: Condition = (value, values) =>
-  Boolean(
-    values.auth &&
-      values.auth.integrations &&
-      values.auth.integrations.google &&
-      values.auth.integrations.google.enabled
-  );
+  Boolean(values.auth.integrations.google.enabled);
 
 const GoogleConfig: FunctionComponent<Props> = ({ disabled, callbackURL }) => (
   <ConfigBoxWithToggleField
