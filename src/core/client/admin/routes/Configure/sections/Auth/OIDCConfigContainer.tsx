@@ -1,7 +1,8 @@
+import { FormApi } from "final-form";
 import React from "react";
-import { useForm } from "react-final-form";
 import { graphql } from "react-relay";
 
+import { withForm } from "coral-framework/lib/form";
 import {
   FetchProp,
   withFetch,
@@ -21,6 +22,7 @@ interface Props {
   onInitValues: OnInitValuesFct;
   disabled?: boolean;
   discoverOIDCConfiguration: FetchProp<typeof DiscoverOIDCConfigurationFetch>;
+  form: FormApi<{auth: AuthData}>;
 }
 
 interface State {
@@ -33,22 +35,25 @@ class OIDCConfigContainer extends React.Component<Props, State> {
   };
 
   private handleDiscover = async () => {
-    const form = useForm();
+    const issuer = this.props.form.getState().values.auth.integrations.oidc.issuer;
+    if (!issuer) {
+      return;
+    }
     this.setState({ awaitingResponse: true });
     try {
       const config = await this.props.discoverOIDCConfiguration({
-        issuer: form.getState().values.auth.integrations.oidc.issuer,
+        issuer,
       });
       if (config) {
         if (config.issuer) {
-          form.change("auth.integrations.oidc.issuer", config.issuer);
+          this.props.form.change("auth.integrations.oidc.issuer", config.issuer);
         }
-        form.change(
+        this.props.form.change(
           "auth.integrations.oidc.authorizationURL",
           config.authorizationURL
         );
-        form.change("auth.integrations.oidc.jwksURI", config.jwksURI);
-        form.change("auth.integrations.oidc.tokenURL", config.tokenURL);
+        this.props.form.change("auth.integrations.oidc.jwksURI", config.jwksURI);
+        this.props.form.change("auth.integrations.oidc.tokenURL", config.tokenURL);
       }
     } catch (error) {
       // FIXME: (wyattjoh) handle error
@@ -76,7 +81,7 @@ class OIDCConfigContainer extends React.Component<Props, State> {
   }
 }
 
-const enhanced = withFetch(DiscoverOIDCConfigurationFetch)(
+const enhanced = withForm(withFetch(DiscoverOIDCConfigurationFetch)(
   withFragmentContainer<Props>({
     auth: graphql`
       fragment OIDCConfigContainer_auth on Auth {
@@ -109,6 +114,6 @@ const enhanced = withFetch(DiscoverOIDCConfigurationFetch)(
       }
     `,
   })(OIDCConfigContainer)
-);
+));
 
 export default enhanced;
