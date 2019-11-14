@@ -2,7 +2,7 @@ import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { graphql } from "react-relay";
 
-import { parseStringBool } from "coral-framework/lib/form";
+import { formatBool, parseStringBool } from "coral-framework/lib/form";
 import {
   FieldSet,
   FormField,
@@ -32,7 +32,7 @@ const parse = (v: string) => {
 };
 
 const format = (v: "PRE" | "POST") => {
-  return v === "PRE";
+  return formatBool(v === "PRE");
 };
 
 const PreModerationConfig: FunctionComponent<Props> = ({ disabled }) => {
@@ -67,12 +67,7 @@ const PreModerationConfig: FunctionComponent<Props> = ({ disabled }) => {
               Pre-moderate comments containing links sitewide
             </InputLabel>
           </Localized>
-          <OnOffField
-            name="premodLinksEnable"
-            parse={parse}
-            format={format}
-            disabled={disabled}
-          />
+          <OnOffField name="premodLinksEnable" disabled={disabled} />
         </FormField>
       </SectionContent>
     </HorizontalGutter>

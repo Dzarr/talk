@@ -1,11 +1,10 @@
 import { Localized } from "fluent-react/compat";
 import { get } from "lodash";
 import React, { FunctionComponent } from "react";
-import { Field, Form } from "react-final-form";
+import { Field, FieldProps, Form } from "react-final-form";
 
 import { OnSubmit } from "coral-framework/lib/form";
 import { validateMaxLength } from "coral-framework/lib/validation";
-import { PropTypesOf } from "coral-framework/types";
 import CLASSES from "coral-stream/classes";
 import ValidationMessage from "coral-stream/common/ValidationMessage";
 import {
@@ -22,18 +21,17 @@ import styles from "./ReportCommentForm.css";
 
 const RadioField: FunctionComponent<
   Pick<
-    PropTypesOf<typeof Field>,
+    FieldProps<string, any>,
     "validate" | "name" | "value" | "disabled" | "children"
   >
 > = ({ name, value, disabled, children }) => {
-  const v: string = typeof value === "string" ? value : "";
   return (
-    <Field name={name} type="radio" value={v}>
+    <Field name={name} type="radio" value={value}>
       {({ input }) => (
         <RadioButton
-          id={`reportComment-popover--${input.name}-${v}`}
+          id={`reportComment-popover--${input.name}-${value}`}
           disabled={disabled}
-          value={v}
+          value={value}
           {...input}
         >
           {children}

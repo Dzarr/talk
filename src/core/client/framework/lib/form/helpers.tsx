@@ -51,8 +51,8 @@ export const formatPercentage = (v: any) => {
 
 export const parseBool = (v: any) => Boolean(v);
 export const parseStringBool = (v: string) => v === "true";
-export const booleanFormatter = (v: "true" | "false") => {
-  return v === "true";
+export const formatBool = (v: boolean) => {
+  return v ? "true" : "false";
 };
 
 export const parseNewLineDelimitedString = (v: string) => v.split("\n");
