@@ -176,13 +176,13 @@ const ConfirmPage: FunctionComponent<Props> = ({
                           <InputLabel>Enter your password:</InputLabel>
                         </Localized>
                         <PasswordField
+                          {...input}
                           fullWidth
                           id={input.name}
                           data-testid="confirm-page-password"
                           disabled={submitting}
                           color={colorFromMeta(meta)}
                           autoComplete="password"
-                          {...input}
                         />
                         <FieldValidationMessage fullWidth meta={meta} />
                       </FormField>

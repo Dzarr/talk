@@ -15,8 +15,8 @@ const PremodLinksConfig: FunctionComponent<Props> = ({ disabled }) => (
   <Field name="premodLinksEnable" type="checkbox" parse={parseBool}>
     {({ input }) => (
       <ToggleConfig
-        id={input.name}
         {...input}
+        id={input.name}
         disabled={disabled}
         title={
           <Localized id="configure-premodLink-title">

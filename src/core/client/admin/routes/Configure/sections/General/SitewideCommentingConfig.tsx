@@ -90,8 +90,8 @@ const SitewideCommentingConfig: FunctionComponent<Props> = ({ disabled }) => (
           <>
             <Suspense fallback={<Spinner />}>
               <MarkdownEditor
-                id="configure-general-sitewideCommenting-message"
                 {...input}
+                id="configure-general-sitewideCommenting-message"
               />
             </Suspense>
             <ValidationMessage meta={meta} fullWidth />

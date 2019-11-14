@@ -75,8 +75,8 @@ const EmailConfigContainer: React.FunctionComponent<Props> = ({
               <FormField>
                 <Localized id="configure-email-configBoxEnabled">
                   <CheckBox
-                    id={input.name}
                     {...input}
+                    id={input.name}
                     light
                     disabled={submitting}
                   >

@@ -326,12 +326,12 @@ const changeEmailContainer: FunctionComponent<Props> = ({
                                 attrs={{ placeholder: true }}
                               >
                                 <PasswordField
+                                  {...input}
                                   id={input.name}
                                   placeholder="Password"
                                   color={colorFromMeta(meta)}
                                   disabled={submitting}
                                   fullWidth
-                                  {...input}
                                 />
                               </Localized>
                               <FieldValidationMessage meta={meta} fullWidth />

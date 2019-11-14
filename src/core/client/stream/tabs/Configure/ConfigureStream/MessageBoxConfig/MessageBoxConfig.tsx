@@ -37,10 +37,10 @@ const MessageBoxConfig: FunctionComponent<Props> = ({ disabled }) => (
   <Field name="messageBox.enabled" type="checkbox" parse={parseBool}>
     {({ input }) => (
       <ToggleConfig
+        {...input}
         className={CLASSES.configureMessageBox.$root}
         id={input.name}
         disabled={disabled}
-        {...input}
         title={
           <Localized id="configure-messageBox-title">
             <span>Enable Message Box for this Stream</span>

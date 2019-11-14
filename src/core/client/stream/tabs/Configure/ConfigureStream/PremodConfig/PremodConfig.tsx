@@ -21,9 +21,9 @@ const PremodConfig: FunctionComponent<Props> = ({ disabled }) => (
   <Field name="moderation" type="checkbox" parse={parse} format={format}>
     {({ input }) => (
       <ToggleConfig
+        {...input}
         id={input.name}
         disabled={disabled}
-        {...input}
         title={
           <Localized id="configure-premod-title">
             <span>Pre-Moderation</span>

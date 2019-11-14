@@ -62,13 +62,13 @@ const CommentEditingConfig: FunctionComponent<Props> = ({ disabled }) => (
           {({ input, meta }) => (
             <>
               <DurationField
+                {...input}
                 units={[
                   DURATION_UNIT.SECONDS,
                   DURATION_UNIT.MINUTES,
                   DURATION_UNIT.HOURS,
                 ]}
                 disabled={disabled}
-                {...input}
               />
               <ValidationMessage meta={meta} />
             </>

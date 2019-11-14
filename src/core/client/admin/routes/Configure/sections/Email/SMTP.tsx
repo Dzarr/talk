@@ -165,11 +165,11 @@ const SMTP: FunctionComponent<Props> = ({ disabled }) => (
               {({ input, meta }) => (
                 <>
                   <PasswordField
+                    {...input}
                     id={input.name}
                     disabled={disabled || !enabled}
                     fullWidth
                     color={colorFromMeta(meta)}
-                    {...input}
                   />
                   <ValidationMessage fullWidth meta={meta} />
                 </>

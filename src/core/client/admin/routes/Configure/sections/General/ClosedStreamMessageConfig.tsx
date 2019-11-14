@@ -50,8 +50,8 @@ const ClosedStreamMessageConfig: FunctionComponent<Props> = ({ disabled }) => (
           <>
             <Suspense fallback={<Spinner />}>
               <MarkdownEditor
-                id="configure-general-closedStreamMessage-content"
                 {...input}
+                id="configure-general-closedStreamMessage-content"
               />
             </Suspense>
             <ValidationMessage meta={meta} fullWidth />

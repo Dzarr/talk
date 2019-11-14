@@ -15,9 +15,9 @@ const LiveUpdatesConfig: FunctionComponent<Props> = ({ disabled }) => (
   <Field name="live.enabled" type="checkbox" parse={parseBool}>
     {({ input }) => (
       <ToggleConfig
+        {...input}
         id={input.name}
         disabled={disabled}
-        {...input}
         title={
           <Localized id="configure-liveUpdates-title">
             <span>Enable Live Updates for this Story</span>

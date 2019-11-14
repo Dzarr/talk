@@ -50,7 +50,7 @@ const SessionConfig: FunctionComponent<Props> = ({ disabled }) => (
       >
         {({ input, meta }) => (
           <>
-            <DurationField disabled={!!disabled} {...input} />
+            <DurationField {...input} disabled={!!disabled} />
             <ValidationMessage meta={meta} />
           </>
         )}

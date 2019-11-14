@@ -131,8 +131,8 @@ const SuspendForm: FunctionComponent<Props> = ({
                         $unit={unit}
                       >
                         <RadioButton
-                          id={`duration-${value}`}
                           {...input}
+                          id={`duration-${value}`}
                           onChange={event => {
                             form.mutators.setMessageValue(
                               "emailMessage",
@@ -154,8 +154,8 @@ const SuspendForm: FunctionComponent<Props> = ({
                 {({ input }) => (
                   <Localized id="community-suspendModal-customize">
                     <CheckBox
-                      id="suspendModal-editMessage"
                       {...input}
+                      id="suspendModal-editMessage"
                       onChange={event => {
                         form.mutators.resetMessageValue(
                           "emailMessage",

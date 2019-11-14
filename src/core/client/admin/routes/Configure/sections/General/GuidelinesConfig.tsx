@@ -74,8 +74,8 @@ const GuidelinesConfig: FunctionComponent<Props> = ({ disabled }) => (
           <>
             <Suspense fallback={<Spinner />}>
               <MarkdownEditor
-                id="configure-general-guidelines-content"
                 {...input}
+                id="configure-general-guidelines-content"
               />
             </Suspense>
             <ValidationMessage meta={meta} />

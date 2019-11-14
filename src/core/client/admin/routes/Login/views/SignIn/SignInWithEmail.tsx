@@ -61,12 +61,12 @@ const SignInWithEmail: FunctionComponent<SignInWithEmailForm> = props => {
                     attrs={{ placeholder: true }}
                   >
                     <PasswordField
+                      {...input}
                       id={input.name}
                       placeholder="Password"
                       color={colorFromMeta(meta)}
                       disabled={submitting}
                       fullWidth
-                      {...input}
                     />
                   </Localized>
                   <ValidationMessage meta={meta} fullWidth />

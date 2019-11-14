@@ -44,9 +44,9 @@ const LocaleConfig: React.FunctionComponent<Props> = props => {
             {({ input, meta }) => (
               <>
                 <LocaleField
+                  {...input}
                   id={`configure-locale-${input.name}`}
                   disabled={props.disabled}
-                  {...input}
                 />
                 <ValidationMessage meta={meta} fullWidth />
               </>

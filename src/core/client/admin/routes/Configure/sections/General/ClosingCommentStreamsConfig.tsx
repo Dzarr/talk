@@ -76,13 +76,13 @@ const ClosingCommentStreamsConfig: FunctionComponent<Props> = ({
           {({ input, meta }) => (
             <>
               <DurationField
+                {...input}
                 units={[
                   DURATION_UNIT.HOURS,
                   DURATION_UNIT.DAYS,
                   DURATION_UNIT.WEEKS,
                 ]}
                 disabled={disabled}
-                {...input}
               />
               <ValidationMessage meta={meta} />
             </>

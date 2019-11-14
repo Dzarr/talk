@@ -37,7 +37,7 @@ const OnOffField: FunctionComponent<Props> = ({
       format={format}
     >
       {({ input }) => (
-        <RadioButton id={`${input.name}-true`} disabled={disabled} {...input}>
+        <RadioButton {...input} id={`${input.name}-true`} disabled={disabled}>
           {onLabel || (
             <Localized id="configure-onOffField-on">
               <span>On</span>
@@ -54,7 +54,7 @@ const OnOffField: FunctionComponent<Props> = ({
       value={JSON.stringify(invert)}
     >
       {({ input }) => (
-        <RadioButton id={`${input.name}-false`} disabled={disabled} {...input}>
+        <RadioButton {...input} id={`${input.name}-false`} disabled={disabled}>
           {offLabel || (
             <Localized id="configure-onOffField-off">
               <span>Off</span>
