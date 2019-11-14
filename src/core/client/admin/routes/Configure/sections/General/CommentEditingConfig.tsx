@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { DURATION_UNIT, DurationField } from "coral-framework/components";
 import {
@@ -20,6 +21,12 @@ import Header from "../../Header";
 import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
 
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment CommentEditingConfig_formValues on Settings {
+    editCommentWindowLength
+  }
+`;
 interface Props {
   disabled: boolean;
 }

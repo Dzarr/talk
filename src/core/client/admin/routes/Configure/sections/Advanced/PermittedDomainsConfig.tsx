@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import {
   colorFromMeta,
@@ -18,6 +19,13 @@ import {
 
 import Header from "../../Header";
 import SectionContent from "../../SectionContent";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment PermittedDomainsConfig_formValues on Settings {
+    allowedDomains
+  }
+`;
 
 interface Props {
   disabled: boolean;

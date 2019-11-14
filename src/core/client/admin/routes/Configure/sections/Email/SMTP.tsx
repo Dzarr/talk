@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import {
   colorFromMeta,
@@ -26,6 +27,20 @@ import OnOffField from "../../OnOffField";
 import Subheader from "../../Subheader";
 import { FormProps } from "./EmailConfigContainer";
 
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment SMTP_formValues on EmailConfiguration {
+    enabled
+    smtp {
+      host
+      port
+      secure
+      authentication
+      username
+      password
+    }
+  }
+`;
 interface Props {
   disabled: boolean;
 }

@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { parseEmptyAsNull, ValidationMessage } from "coral-framework/lib/form";
 import { ExternalLink } from "coral-framework/lib/i18n/components";
@@ -15,6 +16,19 @@ import {
 
 import Header from "../../Header";
 import OnOffField from "../../OnOffField";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment StoryCreationConfig_formValues on Settings {
+    stories {
+      scraping {
+        enabled
+        proxyURL
+      }
+      disableLazy
+    }
+  }
+`;
 
 interface Props {
   disabled: boolean;

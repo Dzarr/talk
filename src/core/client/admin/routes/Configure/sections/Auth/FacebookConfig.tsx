@@ -1,5 +1,6 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
+import { graphql } from "react-relay";
 
 import {
   Condition,
@@ -15,6 +16,24 @@ import ConfigBoxWithToggleField from "./ConfigBoxWithToggleField";
 import RedirectField from "./RedirectField";
 import RegistrationField from "./RegistrationField";
 import TargetFilterField from "./TargetFilterField";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment FacebookConfig_formValues on Auth {
+    integrations {
+      facebook {
+        enabled
+        allowRegistration
+        targetFilter {
+          admin
+          stream
+        }
+        clientID
+        clientSecret
+      }
+    }
+  }
+`;
 
 interface Props {
   disabled?: boolean;

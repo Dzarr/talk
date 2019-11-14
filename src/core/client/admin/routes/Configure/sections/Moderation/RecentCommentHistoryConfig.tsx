@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { DURATION_UNIT, DurationField } from "coral-framework/components";
 import {
@@ -29,6 +30,17 @@ import OnOffField from "../../OnOffField";
 import SectionContent from "../../SectionContent";
 
 import styles from "./RecentCommentHistoryConfig.css";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment RecentCommentHistoryConfig_formValues on Settings {
+    recentCommentHistory {
+      enabled
+      timeFrame
+      triggerRejectionRate
+    }
+  }
+`;
 
 interface Props {
   disabled: boolean;

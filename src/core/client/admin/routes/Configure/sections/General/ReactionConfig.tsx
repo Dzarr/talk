@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { required } from "coral-framework/lib/validation";
 import ReactionButton from "coral-stream/tabs/Comments/Comment/ReactionButton/ReactionButton";
@@ -16,20 +17,36 @@ import {
   Typography,
 } from "coral-ui/components";
 
-import { ReactionConfigContainer_settings as SettingsData } from "coral-admin/__generated__/ReactionConfigContainer_settings.graphql";
-
 import Header from "../../Header";
 import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
 
 import styles from "./ReactionConfig.css";
 
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment ReactionConfig_formValues on Settings {
+    reaction {
+      label
+      labelActive
+      sortLabel
+      icon
+      iconActive
+    }
+  }
+`;
+
 interface Props {
+  icon: string;
+  iconActive: string | null;
   disabled: boolean;
-  settings: SettingsData;
 }
 
-const ReactionsConfig: FunctionComponent<Props> = ({ disabled, settings }) => (
+const ReactionsConfig: FunctionComponent<Props> = ({
+  disabled,
+  icon,
+  iconActive,
+}) => (
   <HorizontalGutter size="oneAndAHalf" container={<FieldSet />}>
     <Localized id="configure-general-reactions-title">
       <Header container="legend">Reactions</Header>
@@ -77,9 +94,9 @@ const ReactionsConfig: FunctionComponent<Props> = ({ disabled, settings }) => (
                     className={styles.reactionButton}
                     reacted={false}
                     label={input.value}
-                    labelActive={settings.reaction.labelActive}
-                    icon={settings.reaction.icon}
-                    iconActive={settings.reaction.iconActive}
+                    labelActive={input.value}
+                    icon={icon}
+                    iconActive={iconActive}
                     totalReactions={0}
                     onClick={() => null}
                   />
@@ -117,10 +134,10 @@ const ReactionsConfig: FunctionComponent<Props> = ({ disabled, settings }) => (
                     className={styles.reactionButton}
                     readOnly
                     reacted
-                    label={settings.reaction.label}
+                    label={input.value}
                     labelActive={input.value}
-                    icon={settings.reaction.icon}
-                    iconActive={settings.reaction.iconActive}
+                    icon={icon}
+                    iconActive={iconActive}
                     totalReactions={0}
                     onClick={() => null}
                   />

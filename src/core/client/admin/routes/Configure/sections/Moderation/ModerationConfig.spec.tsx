@@ -1,21 +1,21 @@
-import { noop } from "lodash";
 import React from "react";
 import { createRenderer } from "react-test-renderer/shallow";
 
 import { removeFragmentRefs } from "coral-framework/testHelpers";
 import { PropTypesOf } from "coral-framework/types";
 
-import ModerationConfig from "./ModerationConfig";
+import { ModerationConfigContainer } from "./ModerationConfigContainer";
 
-const ModerationConfigN = removeFragmentRefs(ModerationConfig);
+const ModerationConfigContainerN = removeFragmentRefs(
+  ModerationConfigContainer
+);
 
 it("renders correctly", () => {
-  const props: PropTypesOf<typeof ModerationConfigN> = {
-    disabled: false,
-    settings: {},
-    onInitValues: noop,
+  const props: PropTypesOf<typeof ModerationConfigContainerN> = {
+    submitting: false,
+    settings: {} as any,
   };
   const renderer = createRenderer();
-  renderer.render(<ModerationConfigN {...props} />);
+  renderer.render(<ModerationConfigContainerN {...props} />);
   expect(renderer.getRenderOutput()).toMatchSnapshot();
 });

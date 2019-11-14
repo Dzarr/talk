@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent, Suspense } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { MarkdownEditor } from "coral-framework/components/loadables";
 import { parseEmptyAsNull } from "coral-framework/lib/form";
@@ -18,6 +19,16 @@ import Header from "../../Header";
 import OnOffField from "../../OnOffField";
 import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment GuidelinesConfig_formValues on Settings {
+    communityGuidelines {
+      enabled
+      content
+    }
+  }
+`;
 
 interface Props {
   disabled: boolean;

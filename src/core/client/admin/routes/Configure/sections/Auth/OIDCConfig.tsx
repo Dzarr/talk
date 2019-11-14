@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import {
   colorFromMeta,
@@ -33,6 +34,29 @@ import ConfigBoxWithToggleField from "./ConfigBoxWithToggleField";
 import RedirectField from "./RedirectField";
 import RegistrationField from "./RegistrationField";
 import TargetFilterField from "./TargetFilterField";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment OIDCConfig_formValues on Auth {
+    integrations {
+      oidc {
+        enabled
+        allowRegistration
+        targetFilter {
+          admin
+          stream
+        }
+        name
+        clientID
+        clientSecret
+        authorizationURL
+        tokenURL
+        jwksURI
+        issuer
+      }
+    }
+  }
+`;
 
 interface Props {
   disabled?: boolean;

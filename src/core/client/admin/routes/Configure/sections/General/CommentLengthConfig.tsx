@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { formatEmpty, parseEmptyAsNull } from "coral-framework/lib/form";
 import {
@@ -23,6 +24,17 @@ import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
 
 import styles from "./CommentLengthConfig.css";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment CommentLengthConfig_formValues on Settings {
+    charCount {
+      enabled
+      min
+      max
+    }
+  }
+`;
 
 const validateMaxLongerThanMin = createValidator(
   (v: any, values: any) =>

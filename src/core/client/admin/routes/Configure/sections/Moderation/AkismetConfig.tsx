@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { colorFromMeta, parseEmptyAsNull } from "coral-framework/lib/form";
 import { ExternalLink } from "coral-framework/lib/i18n/components";
@@ -24,6 +25,19 @@ import OnOffField from "../../OnOffField";
 import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
 import APIKeyField from "./APIKeyField";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment AkismetConfig_formValues on Settings {
+    integrations {
+      akismet {
+        enabled
+        key
+        site
+      }
+    }
+  }
+`;
 
 interface Props {
   disabled: boolean;

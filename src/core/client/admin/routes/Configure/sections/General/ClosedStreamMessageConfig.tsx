@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent, Suspense } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { MarkdownEditor } from "coral-framework/components/loadables";
 import { parseEmptyAsNull } from "coral-framework/lib/form";
@@ -9,6 +10,15 @@ import { HorizontalGutter, Spinner, Typography } from "coral-ui/components";
 import Header from "../../Header";
 import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment ClosedStreamMessageConfig_formValues on Settings {
+    closeCommenting {
+      message
+    }
+  }
+`;
 
 interface Props {
   disabled: boolean;

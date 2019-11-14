@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { DurationField } from "coral-framework/components";
 import { ValidationMessage } from "coral-framework/lib/form";
@@ -17,6 +18,13 @@ import {
 } from "coral-ui/components";
 
 import Header from "../../Header";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment SessionConfig_formValues on Auth {
+    sessionDuration
+  }
+`;
 
 interface Props {
   disabled?: boolean;

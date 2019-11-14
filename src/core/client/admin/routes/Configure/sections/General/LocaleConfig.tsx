@@ -1,27 +1,28 @@
 import { Localized } from "fluent-react/compat";
-import React, { useMemo } from "react";
+import React from "react";
 import { Field } from "react-final-form";
 import { graphql } from "react-relay";
 
 import { LocaleField } from "coral-framework/components";
-import { withFragmentContainer } from "coral-framework/lib/relay";
 import { required } from "coral-framework/lib/validation";
 import { FormField, HorizontalGutter, Typography } from "coral-ui/components";
-
-import { LocaleConfigContainer_settings } from "coral-admin/__generated__/LocaleConfigContainer_settings.graphql";
 
 import Header from "../../Header";
 import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
 
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment LocaleConfig_formValues on Settings {
+    locale
+  }
+`;
+
 interface Props {
-  settings: LocaleConfigContainer_settings;
-  onInitValues: (values: LocaleConfigContainer_settings) => void;
   disabled: boolean;
 }
 
-const LocaleConfigContainer: React.FunctionComponent<Props> = props => {
-  useMemo(() => props.onInitValues(props.settings), [props.onInitValues]);
+const LocaleConfig: React.FunctionComponent<Props> = props => {
   return (
     <FormField>
       <HorizontalGutter size="full">
@@ -57,12 +58,4 @@ const LocaleConfigContainer: React.FunctionComponent<Props> = props => {
   );
 };
 
-const enhanced = withFragmentContainer<Props>({
-  settings: graphql`
-    fragment LocaleConfigContainer_settings on Settings {
-      locale
-    }
-  `,
-})(LocaleConfigContainer);
-
-export default enhanced;
+export default LocaleConfig;

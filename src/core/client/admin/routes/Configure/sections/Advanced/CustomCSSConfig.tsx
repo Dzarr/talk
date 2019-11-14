@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import {
   formatEmpty,
@@ -16,6 +17,13 @@ import {
 
 import Header from "../../Header";
 import SectionContent from "../../SectionContent";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment CustomCSSConfig_formValues on Settings {
+    customCSSURL
+  }
+`;
 
 interface Props {
   disabled: boolean;

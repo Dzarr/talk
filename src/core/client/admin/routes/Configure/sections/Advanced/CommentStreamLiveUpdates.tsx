@@ -1,11 +1,21 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
+import { graphql } from "react-relay";
 
 import { FormField, HorizontalGutter, Typography } from "coral-ui/components";
 
 import Header from "../../Header";
 import OnOffField from "../../OnOffField";
 import SectionContent from "../../SectionContent";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment CommentStreamLiveUpdates_formValues on Settings {
+    live {
+      enabled
+    }
+  }
+`;
 
 interface Props {
   disabled: boolean;

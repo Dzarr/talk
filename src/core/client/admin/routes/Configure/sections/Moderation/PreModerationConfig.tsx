@@ -1,5 +1,6 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
+import { graphql } from "react-relay";
 
 import { parseStringBool } from "coral-framework/lib/form";
 import {
@@ -13,6 +14,14 @@ import {
 import Header from "../../Header";
 import OnOffField from "../../OnOffField";
 import SectionContent from "../../SectionContent";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment PreModerationConfig_formValues on Settings {
+    moderation
+    premodLinksEnable
+  }
+`;
 
 interface Props {
   disabled: boolean;

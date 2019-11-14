@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import { required } from "coral-framework/lib/validation";
 import {
@@ -13,6 +14,15 @@ import {
 import Header from "../../Header";
 import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment OrganizationNameConfig_formValues on Settings {
+    organization {
+      name
+    }
+  }
+`;
 
 interface Props {
   disabled: boolean;

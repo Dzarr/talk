@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import {
   TOXICITY_ENDPOINT_DEFAULT,
@@ -38,6 +39,22 @@ import ValidationMessage from "../../ValidationMessage";
 import APIKeyField from "./APIKeyField";
 
 import styles from "./PerspectiveConfig.css";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment PerspectiveConfig_formValues on Settings {
+    integrations {
+      perspective {
+        enabled
+        endpoint
+        key
+        model
+        threshold
+        doNotStore
+      }
+    }
+  }
+`;
 
 interface Props {
   disabled: boolean;

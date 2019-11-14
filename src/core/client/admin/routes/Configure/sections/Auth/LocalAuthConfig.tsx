@@ -1,11 +1,28 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
+import { graphql } from "react-relay";
 
 import { HorizontalGutter } from "coral-ui/components";
 
 import ConfigBoxWithToggleField from "./ConfigBoxWithToggleField";
 import RegistrationField from "./RegistrationField";
 import TargetFilterField from "./TargetFilterField";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment LocalAuthConfig_formValues on Auth {
+    integrations {
+      local {
+        enabled
+        allowRegistration
+        targetFilter {
+          admin
+          stream
+        }
+      }
+    }
+  }
+`;
 
 interface Props {
   disabled?: boolean;

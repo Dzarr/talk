@@ -1,8 +1,8 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
-import { StaffConfigContainer_settings as SettingsData } from "coral-admin/__generated__/StaffConfigContainer_settings.graphql";
 import { required } from "coral-framework/lib/validation";
 import {
   FieldSet,
@@ -21,12 +21,20 @@ import ValidationMessage from "../../ValidationMessage";
 
 import styles from "./StaffConfig.css";
 
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment StaffConfig_formValues on Settings {
+    staff {
+      label
+    }
+  }
+`;
+
 interface Props {
   disabled: boolean;
-  settings: SettingsData;
 }
 
-const StaffConfig: FunctionComponent<Props> = ({ disabled, settings }) => (
+const StaffConfig: FunctionComponent<Props> = ({ disabled }) => (
   <HorizontalGutter size="oneAndAHalf" container={<FieldSet />}>
     <Localized id="configure-general-staff-title">
       <Header container="legend">Staff member badge</Header>

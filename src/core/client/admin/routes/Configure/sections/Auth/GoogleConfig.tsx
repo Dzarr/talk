@@ -1,5 +1,6 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
+import { graphql } from "react-relay";
 
 import {
   Condition,
@@ -16,6 +17,23 @@ import RedirectField from "./RedirectField";
 import RegistrationField from "./RegistrationField";
 import TargetFilterField from "./TargetFilterField";
 
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment GoogleConfig_formValues on Auth {
+    integrations {
+      google {
+        enabled
+        allowRegistration
+        targetFilter {
+          admin
+          stream
+        }
+        clientID
+        clientSecret
+      }
+    }
+  }
+`;
 interface Props {
   disabled?: boolean;
   callbackURL: string;

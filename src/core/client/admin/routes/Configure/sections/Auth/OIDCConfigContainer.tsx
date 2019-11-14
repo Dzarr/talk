@@ -9,20 +9,17 @@ import {
   withFragmentContainer,
 } from "coral-framework/lib/relay";
 
+import { OIDCConfig_formValues } from "coral-admin/__generated__/OIDCConfig_formValues.graphql";
 import { OIDCConfigContainer_auth as AuthData } from "coral-admin/__generated__/OIDCConfigContainer_auth.graphql";
-import { OIDCConfigContainer_authReadOnly as AuthReadOnlyData } from "coral-admin/__generated__/OIDCConfigContainer_authReadOnly.graphql";
 
-import { OnInitValuesFct } from "./AuthConfigContainer";
 import DiscoverOIDCConfigurationFetch from "./DiscoverOIDCConfigurationFetch";
 import OIDCConfig from "./OIDCConfig";
 
 interface Props {
   auth: AuthData;
-  authReadOnly: AuthReadOnlyData;
-  onInitValues: OnInitValuesFct;
   disabled?: boolean;
   discoverOIDCConfiguration: FetchProp<typeof DiscoverOIDCConfigurationFetch>;
-  form: FormApi<{auth: AuthData}>;
+  form: FormApi<{ auth: AuthData & OIDCConfig_formValues }>;
 }
 
 interface State {
@@ -35,7 +32,8 @@ class OIDCConfigContainer extends React.Component<Props, State> {
   };
 
   private handleDiscover = async () => {
-    const issuer = this.props.form.getState().values.auth.integrations.oidc.issuer;
+    const issuer = this.props.form.getState().values.auth.integrations.oidc
+      .issuer;
     if (!issuer) {
       return;
     }
@@ -46,14 +44,23 @@ class OIDCConfigContainer extends React.Component<Props, State> {
       });
       if (config) {
         if (config.issuer) {
-          this.props.form.change("auth.integrations.oidc.issuer", config.issuer);
+          this.props.form.change(
+            "auth.integrations.oidc.issuer",
+            config.issuer
+          );
         }
         this.props.form.change(
           "auth.integrations.oidc.authorizationURL",
           config.authorizationURL
         );
-        this.props.form.change("auth.integrations.oidc.jwksURI", config.jwksURI);
-        this.props.form.change("auth.integrations.oidc.tokenURL", config.tokenURL);
+        this.props.form.change(
+          "auth.integrations.oidc.jwksURI",
+          config.jwksURI
+        );
+        this.props.form.change(
+          "auth.integrations.oidc.tokenURL",
+          config.tokenURL
+        );
       }
     } catch (error) {
       // FIXME: (wyattjoh) handle error
@@ -63,17 +70,12 @@ class OIDCConfigContainer extends React.Component<Props, State> {
     this.setState({ awaitingResponse: false });
   };
 
-  constructor(props: Props) {
-    super(props);
-    props.onInitValues({ auth: props.auth });
-  }
-
   public render() {
-    const { disabled, authReadOnly } = this.props;
+    const { disabled, auth } = this.props;
     return (
       <OIDCConfig
         disabled={disabled}
-        callbackURL={authReadOnly.integrations.oidc.callbackURL}
+        callbackURL={auth.integrations.oidc.callbackURL}
         onDiscover={this.handleDiscover}
         disableForDiscover={this.state.awaitingResponse}
       />
@@ -81,39 +83,20 @@ class OIDCConfigContainer extends React.Component<Props, State> {
   }
 }
 
-const enhanced = withForm(withFetch(DiscoverOIDCConfigurationFetch)(
-  withFragmentContainer<Props>({
-    auth: graphql`
-      fragment OIDCConfigContainer_auth on Auth {
-        integrations {
-          oidc {
-            enabled
-            allowRegistration
-            targetFilter {
-              admin
-              stream
+const enhanced = withForm(
+  withFetch(DiscoverOIDCConfigurationFetch)(
+    withFragmentContainer<Props>({
+      auth: graphql`
+        fragment OIDCConfigContainer_auth on Auth {
+          integrations {
+            oidc {
+              callbackURL
             }
-            name
-            clientID
-            clientSecret
-            authorizationURL
-            tokenURL
-            jwksURI
-            issuer
           }
         }
-      }
-    `,
-    authReadOnly: graphql`
-      fragment OIDCConfigContainer_authReadOnly on Auth {
-        integrations {
-          oidc {
-            callbackURL
-          }
-        }
-      }
-    `,
-  })(OIDCConfigContainer)
-));
+      `,
+    })(OIDCConfigContainer)
+  )
+);
 
 export default enhanced;

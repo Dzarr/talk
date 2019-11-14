@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import {
   composeValidators,
@@ -18,11 +19,22 @@ import Header from "../../Header";
 import SectionContent from "../../SectionContent";
 import ValidationMessage from "../../ValidationMessage";
 
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment OrganizationContactEmailConfig_formValues on Settings {
+    organization {
+      contactEmail
+    }
+  }
+`;
+
 interface Props {
   disabled: boolean;
 }
 
-const OrganizationNameConfig: FunctionComponent<Props> = ({ disabled }) => (
+const OrganizationContactEmailConfig: FunctionComponent<Props> = ({
+  disabled,
+}) => (
   <FormField>
     <HorizontalGutter size="full">
       <Localized id="configure-organization-email">
@@ -71,4 +83,4 @@ const OrganizationNameConfig: FunctionComponent<Props> = ({ disabled }) => (
   </FormField>
 );
 
-export default OrganizationNameConfig;
+export default OrganizationContactEmailConfig;

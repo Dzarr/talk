@@ -1,6 +1,7 @@
 import { Localized } from "fluent-react/compat";
 import React, { FunctionComponent } from "react";
 import { Field } from "react-final-form";
+import { graphql } from "react-relay";
 
 import {
   colorFromMeta,
@@ -16,6 +17,15 @@ import {
   InputLabel,
   TextField,
 } from "coral-ui/components";
+
+// eslint-disable-next-line no-unused-expressions
+graphql`
+  fragment From_formValues on EmailConfiguration {
+    enabled
+    fromName
+    fromEmail
+  }
+`;
 
 interface Props {
   disabled: boolean;

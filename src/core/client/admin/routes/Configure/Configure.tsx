@@ -1,7 +1,6 @@
-import { createForm, FormApi, FormState } from "final-form";
+import { FormApi, FormState } from "final-form";
 import { Localized } from "fluent-react/compat";
-import { mapValues } from "lodash";
-import React, { FunctionComponent, useEffect, useMemo } from "react";
+import React, { FunctionComponent } from "react";
 import { Form, FormSpy } from "react-final-form";
 
 import MainLayout from "coral-admin/components/MainLayout";
@@ -24,37 +23,10 @@ const Configure: FunctionComponent<Props> = ({
   onChange,
   children,
 }) => {
-  // Set up child form key so we can work around the fact that
-  // final-form and relay don't play nice together. The latest
-  // update of final-form process the field props on the second
-  // component render, we need to trigger a re-render and be
-  // efficient with the value loading.
-  const child = React.Children.only(children);
-  // Incrementing a key value so that we can keep snapshots
-  // working.
-  let keyValue = 0;
-  const formKey = useMemo(() => {
-    keyValue++;
-    return keyValue;
-  }, [child, keyValue]);
-  // Create the form we will use to handle the value load order
-  const form = useMemo(() => {
-    return createForm({
-      onSubmit,
-    });
-  }, [child]);
-  // Get our initial values, map them to null so that the first
-  // render pass is efficient so that we can force a reload with
-  // the values we care about.
-  useEffect(() => {
-    const initialValues = form.getState().initialValues as Record<string, any>;
-    form.reset(mapValues(initialValues, () => null));
-    form.reset(initialValues);
-  }, [child]);
   return (
     <MainLayout data-testid="configure-container">
-      <Form onSubmit={onSubmit} form={form} key={formKey}>
-        {({ handleSubmit, submitting, pristine, submitError }) => (
+      <Form onSubmit={onSubmit}>
+        {({ handleSubmit, submitting, form, pristine, submitError }) => (
           <form autoComplete="off" onSubmit={handleSubmit} id="configure-form">
             <FormSpy onChange={onChange} />
             <Layout>
