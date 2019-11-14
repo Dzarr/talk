@@ -5,7 +5,10 @@ import { graphql } from "react-relay";
 
 import { DeepNullable } from "coral-common/types";
 import { parseBool } from "coral-framework/lib/form";
-import { withFragmentContainer } from "coral-framework/lib/relay";
+import {
+  purgeMetadata,
+  withFragmentContainer,
+} from "coral-framework/lib/relay";
 import { GQLSettings } from "coral-framework/schema";
 import {
   CheckBox,
@@ -53,7 +56,7 @@ const EmailConfigContainer: React.FunctionComponent<Props> = ({
         },
       };
     }
-    form.initialize(values);
+    form.initialize(purgeMetadata(values));
   }, []);
   return (
     <HorizontalGutter size="double">

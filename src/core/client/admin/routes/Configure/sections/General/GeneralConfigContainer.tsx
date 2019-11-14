@@ -2,7 +2,10 @@ import React, { useMemo } from "react";
 import { useForm } from "react-final-form";
 import { graphql } from "react-relay";
 
-import { withFragmentContainer } from "coral-framework/lib/relay";
+import {
+  purgeMetadata,
+  withFragmentContainer,
+} from "coral-framework/lib/relay";
 import { HorizontalGutter } from "coral-ui/components";
 
 import { GeneralConfigContainer_settings as SettingsData } from "coral-admin/__generated__/GeneralConfigContainer_settings.graphql";
@@ -27,7 +30,7 @@ const GeneralConfigContainer: React.FunctionComponent<Props> = ({
   submitting,
 }) => {
   const form = useForm();
-  useMemo(() => form.initialize(settings), []);
+  useMemo(() => form.initialize(purgeMetadata(settings)), []);
   return (
     <HorizontalGutter size="double" data-testid="configure-generalContainer">
       <LocaleConfig disabled={submitting} />

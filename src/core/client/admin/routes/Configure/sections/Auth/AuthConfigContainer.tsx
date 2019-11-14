@@ -14,7 +14,10 @@ import {
   withSubmitHookContext,
 } from "coral-framework/lib/form";
 import { getMessage } from "coral-framework/lib/i18n";
-import { withFragmentContainer } from "coral-framework/lib/relay";
+import {
+  purgeMetadata,
+  withFragmentContainer,
+} from "coral-framework/lib/relay";
 import { GQLSettings } from "coral-framework/schema";
 import { HorizontalGutter } from "coral-ui/components";
 
@@ -46,10 +49,12 @@ class AuthConfigContainer extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.removeSubmitHook = this.props.addSubmitHook(this.submitHook);
-    this.props.form.initialize({
-      ...props.settings,
-      auth: props.auth,
-    });
+    this.props.form.initialize(
+      purgeMetadata({
+        ...props.settings,
+        auth: props.auth,
+      })
+    );
   }
 
   public componentWillUnmount() {

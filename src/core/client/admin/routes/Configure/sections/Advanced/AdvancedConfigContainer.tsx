@@ -2,7 +2,10 @@ import React, { useMemo } from "react";
 import { useForm } from "react-final-form";
 import { graphql } from "react-relay";
 
-import { withFragmentContainer } from "coral-framework/lib/relay";
+import {
+  purgeMetadata,
+  withFragmentContainer,
+} from "coral-framework/lib/relay";
 import { HorizontalGutter } from "coral-ui/components";
 
 import { AdvancedConfigContainer_settings } from "coral-admin/__generated__/AdvancedConfigContainer_settings.graphql";
@@ -23,7 +26,7 @@ const AdvancedConfigContainer: React.FunctionComponent<Props> = ({
   submitting,
 }) => {
   const form = useForm();
-  useMemo(() => form.initialize(settings), []);
+  useMemo(() => form.initialize(purgeMetadata(settings)), []);
   return (
     <HorizontalGutter size="double" data-testid="configure-advancedContainer">
       <EmbedCodeContainer settings={settings} />

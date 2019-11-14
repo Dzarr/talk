@@ -2,7 +2,10 @@ import React, { useMemo } from "react";
 import { useForm } from "react-final-form";
 import { graphql } from "react-relay";
 
-import { withFragmentContainer } from "coral-framework/lib/relay";
+import {
+  purgeMetadata,
+  withFragmentContainer,
+} from "coral-framework/lib/relay";
 import { HorizontalGutter } from "coral-ui/components";
 
 import { ModerationConfigContainer_settings as SettingsData } from "coral-admin/__generated__/ModerationConfigContainer_settings.graphql";
@@ -22,7 +25,7 @@ export const ModerationConfigContainer: React.FunctionComponent<Props> = ({
   submitting,
 }) => {
   const form = useForm();
-  useMemo(() => form.initialize(settings), []);
+  useMemo(() => form.initialize(purgeMetadata(settings)), []);
   return (
     <HorizontalGutter size="double" data-testid="configure-moderationContainer">
       <PreModerationConfig disabled={submitting} />
