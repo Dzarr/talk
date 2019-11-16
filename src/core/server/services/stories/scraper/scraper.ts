@@ -85,7 +85,7 @@ class Scraper {
 
     const options: RequestInit = {
       headers: {
-        "User-Agent": `Talk Scraper/${version}`,
+        "User-Agent": `Coral Scraper/${version}`,
       },
     };
     if (proxyURL) {
